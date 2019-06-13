@@ -1,3 +1,4 @@
+
 var formatAdobeAnalyticsPixel = {
 
 	output: [],
@@ -51,14 +52,21 @@ var formatAdobeAnalyticsPixel = {
 
 	printInfo: function() {
 		console.group(this.output[0]);
+		test=[];
+		test_info=[];
 		for(var i=1; i<this.output.length; i++) {
 			var prefix = this.output[i]['css'] ? '%c' : '';
 			var css = this.output[i]['css'] ? this.output[i]['css'] : '';
 			if(this.output[i]['info'])
 				console.info(prefix + this.output[i]['info'], css)
-			else
+			else{
+				//test.push('"'+ prefix + this.output[i]['line']+ '"');
+				test.push(this.output[i]['line'].replace(':',','));
 				console.log(prefix + this.output[i]['line'], css)
+			}
 		}
+		window.open('data:text/csv;charset=utf-8,' + escape(test.join('\n')));
+
 		console.groupEnd();
 		this.output = [];
 		this.no++;
