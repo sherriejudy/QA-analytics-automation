@@ -73,7 +73,7 @@ var formatAdobeAnalyticsPixel = {
         // Creating a temporary link for downloading the encoded CSV data
 		var link = document.createElement("a");
 		link.setAttribute("href", encodedURI);
-		link.setAttribute("download", "my_data.csv");
+		link.setAttribute("download", "Analytics.csv");
 		link.style.visibility = 'hidden';
 		document.body.appendChild(link); // Required for FF
 
