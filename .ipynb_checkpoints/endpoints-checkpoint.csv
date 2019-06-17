@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ,0
 0,https://www.shaw.ca/bluecurve/
 1,https://www.shaw.ca/bluecurve/bluecurve-home/
@@ -27,3 +28,28 @@
 25,https://www.shaw.ca/bundles/
 26,https://www.shaw.ca/bundles/bluesky-tv-bundles/
 27,https://www.shaw.ca/bundles/shaw-tv-bundles/
+=======
+https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/
+https://business.shaw.ca
+https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/
+https://community.shaw.ca/
+https://my.shaw.ca/
+https://webmail.shaw.ca/
+https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/contact-us
+https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/bluecurve
+https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/bluecurve/bluecurve-pods
+https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/internet
+https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/internet/wifi
+https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/internet/fibreplus
+https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/tv
+https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/tv/freerangetv
+https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/tv/programming
+https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/tv/programming/channels
+https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/tv/programming/channels/channel-listings
+https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/tv/programming/channels/pick-and-pay
+https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/tv/programming/channels/premium
+https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/tv/programming/channels/news-and-free-previews
+https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/home-phone
+https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/bundles
+https://business.shaw.ca/
+>>>>>>> Modified the csv download method in cs.js file to provide custom name for the file. Added code for exporting found endpoints in CSV format.
