@@ -1,0 +1,81 @@
+, shawutsbusinessprod, shawutsdevelopment, shawutsdevelopment, shawutsdevelopment, shawutsmyaccountprod, shawutsbusinessprod, shawsupportcommunity2.0, shawutsdevelopment, shawutsdevelopment, shawutsdevelopment
+Adobe Experience Cloud,,,,,,,,,,
+Char Set           , UTF-8, UTF-8, UTF-8, UTF-8, UTF-8, UTF-8,, UTF-8, UTF-8, UTF-8
+Cookies            , First-Party, Third-Party, Third-Party, Third-Party, First-Party, First-Party, Third-Party, Third-Party, Third-Party, Third-Party
+Currency Code      , cad, CAD, CAD, CAD, cad, cad, CAD, CAD, CAD, CAD
+Current URL        , https://business.shaw.ca/, https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/bluecurve, https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/page-not-found, https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/internet/wifi, https://signin.shaw.ca/idp/SSO.saml2, https://business.shaw.ca/, https://community.shaw.ca/, https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/, https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/internet, https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/bluecurve/bluecurve-pods
+Data Centre        , strack.shaw.ca, strack.shaw.ca, strack.shaw.ca, strack.shaw.ca, strack.shaw.ca, strack.shaw.ca," shawtelevision.112.2o7.net - San Jose, California (non-RDC collection method)", strack.shaw.ca, strack.shaw.ca, strack.shaw.ca
+Events             , event1, event1," event1,event59", event1, event1, event1, event1, event1, event1, event1
+Implement Visitor ID service (https,,,,,,,//marketing.adobe.com/resources/help/en_US/mcvid/),,,
+JavaScript Version , 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6, 1.6
+List eVar3         ,,,," 111110,222225",,,,," 111110,222225"," 111110,222225"
+Manualy set visitor ID       , 81303989000887279471777570828131698551, 81303989000887279471777570828131698551, 81303989000887279471777570828131698551, 81303989000887279471777570828131698551, 81303989000887279471777570828131698551,,, 81303989000887279471777570828131698551, 81303989000887279471777570828131698551, 81303989000887279471777570828131698551
+Migrate code library to AppMeasurement (https,,,,,,,//marketing.adobe.com/resources/help/en_US/sc/implement/appmeasure_mjs.html),,,
+Migrate to RDC data collection method (https,,,,,,,//marketing.adobe.com/resources/help/en_US/whitepapers/rdc/rdc.html),,,
+Organisation ID    , 5F34123F5245B4A70A490D45@AdobeOrg, 5F34123F5245B4A70A490D45@AdobeOrg, 5F34123F5245B4A70A490D45@AdobeOrg, 5F34123F5245B4A70A490D45@AdobeOrg, 5F34123F5245B4A70A490D45@AdobeOrg, 5F34123F5245B4A70A490D45@AdobeOrg,, 5F34123F5245B4A70A490D45@AdobeOrg, 5F34123F5245B4A70A490D45@AdobeOrg, 5F34123F5245B4A70A490D45@AdobeOrg
+Page Name          , business|home, bluecurve, page-not-found, internet|wifi, login|myacct-cable-web, business|home, support|home,, internet, bluecurve|bluecurve-pods
+Recommendations,,,,,,,,,,
+Site Section       , home, bluecurve, page-not-found, internet, myacct-cable-web, home, support-home,, internet, bluecurve
+Version of Code    , JS-2.9.0, JS-2.9.0, JS-2.9.0, JS-2.9.0, JS-2.9.0, JS-2.9.0, H.27.4, JS-2.9.0, JS-2.9.0, JS-2.9.0
+Visitor ID         , 81303989000887279471777570828131698551, 81303989000887279471777570828131698551, 81303989000887279471777570828131698551, 81303989000887279471777570828131698551, 81303989000887279471777570828131698551, 81303989000887279471777570828131698551,, 81303989000887279471777570828131698551, 81303989000887279471777570828131698551, 81303989000887279471777570828131698551
+Zip                ,, false, false, false,,,, false, false, false
+eVar1              , business|home, bluecurve, page-not-found, internet|wifi, login|myacct-cable-web, business|home, D=pageName,, internet, bluecurve|bluecurve-pods
+eVar10             , https://business.shaw.ca/, https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/bluecurve, https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/page-not-found, https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/internet/wifi, https://signin.shaw.ca/idp/SSO.saml2, https://business.shaw.ca/,, https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/, https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/internet, https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/bluecurve/bluecurve-pods
+eVar105            ,,,, 111110,,,,, 111110, 111110
+eVar11             , 2.9.0, 2.9.0, 2.9.0, 2.9.0, 2.9.0, 2.9.0,, 2.9.0, 2.9.0, 2.9.0
+eVar13             , 81303989000887279471777570828131698551, 81303989000887279471777570828131698551, 81303989000887279471777570828131698551, 81303989000887279471777570828131698551, 81303989000887279471777570828131698551, 81303989000887279471777570828131698551,, 81303989000887279471777570828131698551, 81303989000887279471777570828131698551, 81303989000887279471777570828131698551
+eVar14             , english, en, en, en, english, english,,, en, en
+eVar19             , logged-out, logged-out, logged-out, logged-out, logged-out, logged-out,, logged-out, logged-out, logged-out
+eVar2              , home, bluecurve, page-not-found, internet, myacct-cable-web, home, D=ch,, internet, bluecurve
+eVar22             ,, false, false, false,,,, false, false, false
+eVar25             , 016b6b1d470d001b0b0f067a10710307800460700093c|1560870209296, 016b6b1d470d001b0b0f067a10710307800460700093c|1560870209296, 016b6b1d470d001b0b0f067a10710307800460700093c|1560870209296, 016b6b1d470d001b0b0f067a10710307800460700093c|1560870209296, 016b6b1d470d001b0b0f067a10710307800460700093c|1560870209296, 016b6b1d470d001b0b0f067a10710307800460700093c|1560870209296,, 016b6b1d470d001b0b0f067a10710307800460700093c|1560870209296, 016b6b1d470d001b0b0f067a10710307800460700093c|1560870209296, 016b6b1d470d001b0b0f067a10710307800460700093c|1560870209296
+eVar3              , https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/internet/wifi, https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/page-not-found, https://signin.shaw.ca/idp/SSO.saml2, https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/internet, https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/,, D=pageName, https://business.shaw.ca/, https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/bluecurve/bluecurve-pods, https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/bluecurve
+eVar32             ,, false, false, false,,,, false, false, false
+eVar34             , 0, 1, 1, 2,, 0,, 0, 1, 2
+eVar4              , New, New, New, New, New, New,, New, New, New
+eVar40             ,, false, false, false,,,, false, false, false
+eVar41             ,, false, false, false,,,, false, false, false
+eVar5              , tuesday|11:03am, tuesday|11:03am, tuesday|11:03am, tuesday|11:03am, 11, tuesday|11:03am,, tuesday|11:03am, tuesday|11:03am, tuesday|11:03am
+eVar50             , homepage,,,,, homepage,,,,
+eVar51             , unknown, unknown, unknown, unknown,, unknown,, unknown, unknown, unknown
+eVar53             , bellcanada, bellcanada, bellcanada, bellcanada,, bellcanada,, bellcanada, bellcanada, bellcanada
+eVar54             ,,,,,,, logged-out,,,
+eVar59             ,,, 404,,,,,,,
+eVar60             , solution-builder|step-1,,,,, solution-builder|step-1,,,,
+eVar63             , 2306864108487070.439,,,,,,,,,
+eVar7              , Tue Jun 18 2019 11:03:56 GMT-0400 (Eastern Daylight Time), tue jun 18 2019 11:03:41 gmt-0400 eastern daylight time, tue jun 18 2019 11:03:40 gmt-0400 eastern daylight time, tue jun 18 2019 11:03:44 gmt-0400 eastern daylight time,, Tue Jun 18 2019 11:03:29 GMT-0400 (Eastern Daylight Time),, tue jun 18 2019 11:03:33 gmt-0400 eastern daylight time, tue jun 18 2019 11:03:43 gmt-0400 eastern daylight time, tue jun 18 2019 11:03:42 gmt-0400 eastern daylight time
+eVar70             ,,,,,,, 11:03:29,,,
+eVar71             ,,,,,,, Tuesday,,,
+eVar72             ,,,,,,, shaw.ca support,,,
+eVar73             ,,,,,,," Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.80 Safari/537.36",,,
+eVar74             ,,,,,,, https://community.shaw.ca/,,,
+eVar75             ,,,,,,, https:/assets2.jiveon.com/core/2018.16.0.0.11dadcc,,,
+eVar76             ,,,,,,, Tue Jun 18 2019 11:03:29 GMT-0400 (Eastern Daylight Time),,,
+eVar8              , business, test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca, test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca, test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca, my account web signin, business,, test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca, test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca, test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca
+eVar86             ,,,, 1.5,,,,, 1.5, 1.5
+eVar9              ," Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.80 Safari/537.36"," Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.80 Safari/537.36"," Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.80 Safari/537.36"," Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.80 Safari/537.36"," Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.80 Safari/537.36"," Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.80 Safari/537.36",," Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.80 Safari/537.36"," Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.80 Safari/537.36"," Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.80 Safari/537.36"
+eVar96             ,, unknown, unknown, unknown,,,, unknown, unknown, unknown
+prop1              , business|home, bluecurve, page-not-found, internet|wifi, login|myacct-cable-web, business|home,,, internet, bluecurve|bluecurve-pods
+prop10             , https://business.shaw.ca/, https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/bluecurve, https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/page-not-found, https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/internet/wifi, https://signin.shaw.ca/idp/SSO.saml2, https://business.shaw.ca/,, https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/, https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/internet, https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/bluecurve/bluecurve-pods
+prop11             , 2.9.0, 2.9.0, 2.9.0, 2.9.0, 2.9.0, 2.9.0,, 2.9.0, 2.9.0, 2.9.0
+prop13             , 81303989000887279471777570828131698551, 81303989000887279471777570828131698551, 81303989000887279471777570828131698551, 81303989000887279471777570828131698551, 81303989000887279471777570828131698551,,, 81303989000887279471777570828131698551, 81303989000887279471777570828131698551, 81303989000887279471777570828131698551
+prop14             , english, en, en, en, english, english,,, en, en
+prop16             , internet|wifi|12|12, page-not-found|40|40, login|myacct-cable-web|68|68, internet|7|7, https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/|13|13, |undefined|undefined,, business|home|15|14, bluecurve|bluecurve-pods|12|12, bluecurve|7|7
+prop17             , 17, 9, 7, 15, 5, 1,, 3, 13, 11
+prop18             , internet|wifi, page-not-found, login|myacct-cable-web, internet, business|home,,,, bluecurve|bluecurve-pods, bluecurve
+prop19             , logged-out, logged-out, logged-out, logged-out, logged-out, logged-out,, logged-out, logged-out, logged-out
+prop2              , home, bluecurve, page-not-found, internet, myacct-cable-web, home,,, internet, bluecurve
+prop22             , desktop, desktop, desktop, desktop, desktop, desktop,, desktop, desktop, desktop
+prop23             ,,,, wifi,,,,,, bluecurve-pods
+prop3              , https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/internet/wifi, https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/page-not-found, https://signin.shaw.ca/idp/SSO.saml2, https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/internet, https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/,, D=pageName, https://business.shaw.ca/, https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/bluecurve/bluecurve-pods, https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/bluecurve
+prop34             , 0, 1, 1, 2,, 0,, 0, 1, 2
+prop4              , New, New, New, New, New, New,, New, New, New
+prop40             ,, false, false, false,,,, false, false, false
+prop41             ,, false, false, false,,,, false, false, false
+prop5              , tuesday|11:03am, tuesday|11:03am, tuesday|11:03am, tuesday|11:03am, 11, tuesday|11:03am,, tuesday|11:03am, tuesday|11:03am, tuesday|11:03am
+prop50             , homepage,,,,, homepage,,,,
+prop51             , unknown, unknown, unknown, unknown,, unknown,, unknown, unknown, unknown
+prop59             ,,, 404,,,,,,,
+prop7              , Tue Jun 18 2019 11:03:56 GMT-0400 (Eastern Daylight Time), tue jun 18 2019 11:03:41 gmt-0400 eastern daylight time, tue jun 18 2019 11:03:40 gmt-0400 eastern daylight time, tue jun 18 2019 11:03:44 gmt-0400 eastern daylight time,, Tue Jun 18 2019 11:03:29 GMT-0400 (Eastern Daylight Time),, tue jun 18 2019 11:03:33 gmt-0400 eastern daylight time, tue jun 18 2019 11:03:43 gmt-0400 eastern daylight time, tue jun 18 2019 11:03:42 gmt-0400 eastern daylight time
+prop8              , business, test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca, test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca, test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca, my account web signin, business,, test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca, test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca, test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca
+prop9              ," Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.80 Safari/537.36"," Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.80 Safari/537.36"," Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.80 Safari/537.36"," Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.80 Safari/537.36"," Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.80 Safari/537.36"," Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.80 Safari/537.36",," Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.80 Safari/537.36"," Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.80 Safari/537.36"," Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.80 Safari/537.36"

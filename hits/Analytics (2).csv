@@ -1,0 +1,26 @@
+Report Suite ID    ~~ shawsupportcommunity2.0
+Page Name          ~~ support|home
+Site Section       ~~ support-home
+Current URL        ~~ https://community.shaw.ca/
+Events             ~~ event1
+eVar1              ~~ D=pageName
+eVar2              ~~ D=ch
+eVar3              ~~ D=pageName
+eVar54             ~~ logged-out
+eVar70             ~~ 11:03:29
+eVar71             ~~ Tuesday
+eVar72             ~~ shaw.ca support
+eVar73             ~~ Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.80 Safari/537.36
+eVar74             ~~ https://community.shaw.ca/
+eVar75             ~~ https:/assets2.jiveon.com/core/2018.16.0.0.11dadcc
+eVar76             ~~ Tue Jun 18 2019 11:03:29 GMT-0400 (Eastern Daylight Time)
+prop3              ~~ D=pageName
+Currency Code      ~~ CAD
+JavaScript Version ~~ 1.6
+Version of Code    ~~ H.27.4
+Data Centre        ~~ shawtelevision.112.2o7.net - San Jose, California (non-RDC collection method)
+Cookies            ~~ Third-Party
+Recommendations
+Migrate to RDC data collection method (https~~//marketing.adobe.com/resources/help/en_US/whitepapers/rdc/rdc.html)
+Implement Visitor ID service (https~~//marketing.adobe.com/resources/help/en_US/mcvid/)
+Migrate code library to AppMeasurement (https~~//marketing.adobe.com/resources/help/en_US/sc/implement/appmeasure_mjs.html)

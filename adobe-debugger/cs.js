@@ -61,7 +61,7 @@ var formatAdobeAnalyticsPixel = {
 				console.info(prefix + this.output[i]['info'], css)
 			else{
                 // Gathering analytics data in the test array
-				test.push(this.output[i]['line'].replace(':',','));
+				test.push(this.output[i]['line'].replace(':','~~'));
 				console.log(prefix + this.output[i]['line'], css)
 			}
 		}
