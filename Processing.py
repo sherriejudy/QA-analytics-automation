@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
 # ### CSV Prettifier
 # 
 # - Input: path of raw CSV files.
@@ -86,22 +83,3 @@ def CSV_prettifier(path):
     dup_ep.fillna('False')
     dup_ep.to_csv(path+ '/' +'Endpoints-final.csv',index=False)
     writer.save()
-
-
-# In[8]:
-
-
-path = '/Users/adekadam/Documents/GitHub/shaw-data-bot/hits'
-
-
-# In[9]:
-
-
-CSV_prettifier(path)
-
-
-# In[ ]:
-
-
-
-
