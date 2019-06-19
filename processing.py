@@ -1,7 +1,12 @@
+# Processing Adobe Analytics CSV files
 # CSV Prettifier
 # 
 # - Input: path of raw CSV files.
 # - Output: CSV (single sheet)/XLSX (multiple sheets) files with improved readability.
+# Import required modules
+import pandas as pd
+import os
+import glob
 
 def CSV_prettifier(path):
     
@@ -10,10 +15,6 @@ def CSV_prettifier(path):
     (i.e. path = '/Users/[username]/Downloads')
     Output: .xlsx file with individual sheets for every hit + summary sheet.
     """
-    
-    import pandas as pd
-    import os
-    import glob
     
     # Read all csv files in specified path.
     all_files = glob.glob1(path,"*csv")
