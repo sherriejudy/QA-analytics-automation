@@ -1,11 +1,11 @@
 # Navigating to all the page links and getting Adobe Analytics data
 
 # Import required modules
-from selenium import webdriver
 from bs4 import BeautifulSoup
 from requests import get
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+import sys
 
 # Function to download analytics data for all navigation links on the website
 # Parses through the HTML navigation bar and uses the extension to download data
@@ -21,8 +21,13 @@ def endPointHits(websiteURL, userDir, extensionPath, driverPath):
     
     # Creating a Beautiful Soup Object with website's
     # Home page HTML
-    response = get(websiteURL)
-    htmlSoup = BeautifulSoup(response.text, 'html.parser')
+    try:
+        response = get(websiteURL)
+        htmlSoup = BeautifulSoup(response.text, 'html.parser')
+    except:
+        # Handling exception for wrong URL
+        print('Exception: Not a valid URL')
+        sys.exit(1)
     # print(html_soup.prettify())
 
     # Finding all navigation links for page load testing
@@ -45,6 +50,11 @@ def endPointHits(websiteURL, userDir, extensionPath, driverPath):
 
     # Remove duplicate links
     endPoints = list(dict.fromkeys(endPoints))
+
+    # Handling no endpoints exception
+    if not endPoints:
+        print('Exception: No navigation endpoints found')
+        sys.exit(1)
 
     # Exporting web endpoints to a CSV file
     with open(userDir + '/Downloads/Endpoints.csv', 'w') as f:
