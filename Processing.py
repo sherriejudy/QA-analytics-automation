@@ -1,7 +1,13 @@
+#!/usr/bin/env python
+# coding: utf-8
+
 # ### CSV Prettifier
 # 
 # - Input: path of raw CSV files.
 # - Output: CSV (single sheet)/XLSX (multiple sheets) files with improved readability.
+
+# In[7]:
+
 
 def CSV_prettifier(path):
     
@@ -20,7 +26,8 @@ def CSV_prettifier(path):
     all_files = glob.glob1(path,"*csv")
     
     ep = pd.read_csv(path+ '/' +'Endpoints.csv', names=['Endpoints'])
-    ep['Success?'] = np.nan
+    dup_ep = ep
+    dup_ep['Success?'] = np.nan
     
     # Remove any csv files that aren't part of analytics output.
     for file in all_files:
@@ -53,8 +60,8 @@ def CSV_prettifier(path):
         else:
             print('Success', url)
             #success.append(url)
-            i = ep[ep['Endpoints'] == 'https://community.shaw.ca'].index
-            ep['Table'][i] = True
+            i = ep[ep['Endpoints'] == url].index
+            dup_ep['Success?'][i] = True
             
         
         # Setting the name of each sheet to the webpage name.
@@ -64,7 +71,7 @@ def CSV_prettifier(path):
             di.update({ 'home' : df})
         
         # Delete raw csv file after use.
-        os.remove(x)
+        #os.remove(x)
     
     # Concat list of dataframes to generate summary page.
     frame = pd.concat(li, axis=1, sort='False')
@@ -76,6 +83,25 @@ def CSV_prettifier(path):
     for sheet in di.keys():
         di[sheet].to_excel(writer, sheet_name=sheet, index=True)
     
-    ep.fillna(False)
-    ep.to_csv(path+ '/' +'Endpoints.csv',index=False)
+    dup_ep.fillna('False')
+    dup_ep.to_csv(path+ '/' +'Endpoints-final.csv',index=False)
     writer.save()
+
+
+# In[8]:
+
+
+path = '/Users/adekadam/Documents/GitHub/shaw-data-bot/hits'
+
+
+# In[9]:
+
+
+CSV_prettifier(path)
+
+
+# In[ ]:
+
+
+
+
