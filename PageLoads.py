@@ -73,6 +73,5 @@ def endPointHits(websiteURL, userDir, extensionPath, driverPath):
 
     # Downloading Page Load analytics for each page in CSV format
     for page in endPoints:
-        print(page)
         driver.get(page)
 

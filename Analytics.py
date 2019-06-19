@@ -17,7 +17,6 @@ websiteURL = sys.argv[1]
 PageLoads.endPointHits(websiteURL, homeDir, repoPath + '/adobe-debugger', repoPath + '/chromedriver')
 # Processing and collating analytics data
 Processing.CSV_prettifier(homeDir + '/Downloads')
-s
 
 
 
