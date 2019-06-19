@@ -12,6 +12,7 @@ def CSV_prettifier(path):
     """
     
     import pandas as pd
+    import numpy as np
     import os
     import glob
     
@@ -19,6 +20,7 @@ def CSV_prettifier(path):
     all_files = glob.glob1(path,"*csv")
     
     ep = pd.read_csv(path+ '/' +'Endpoints.csv', names=['Endpoints'])
+    ep['Success?'] = np.nan
     
     # Remove any csv files that aren't part of analytics output.
     for file in all_files:
@@ -29,6 +31,8 @@ def CSV_prettifier(path):
         
     li = []
     di = {}
+    #failure = []
+    #success = []
     
     # Read csv files to pandas and append to `li` for summary page and `di` for indiv sheets.
     for filename in all_files:
@@ -45,8 +49,13 @@ def CSV_prettifier(path):
             pass
         if url not in list(ep['Endpoints']):
             print('Failed:', url)
+            #failure.append(url)
         else:
             print('Success', url)
+            #success.append(url)
+            i = ep[ep['Endpoints'] == 'https://community.shaw.ca'].index
+            ep['Table'][i] = True
+            
         
         # Setting the name of each sheet to the webpage name.
         if len(df.iloc[0][0]) <= 31:
@@ -61,10 +70,12 @@ def CSV_prettifier(path):
     frame = pd.concat(li, axis=1, sort='False')
     di.update({'Summary' : frame})
     
-    writer = pd.ExcelWriter(path+ '/' +'shawQA-sheets.xlsx', engine='xlsxwriter')
+    writer = pd.ExcelWriter(path+ '/' +'shaw-pageloads.xlsx', engine='xlsxwriter')
     
     # Write each sheet to .xlsx file.
     for sheet in di.keys():
         di[sheet].to_excel(writer, sheet_name=sheet, index=True)
-
+    
+    ep.fillna(False)
+    ep.to_csv(path+ '/' +'Endpoints.csv',index=False)
     writer.save()
