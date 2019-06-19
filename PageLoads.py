@@ -27,7 +27,7 @@ def endPointHits(websiteURL, userDir, extensionPath, driverPath):
 
     # Finding all navigation links for page load testing
     endPoints = []
-    navLinks = htmlSoup.find('body').find_all('a')
+    navLinks = htmlSoup.find('nav').find_all('a')
     
     for link in navLinks:
         # value of href attribute of each tag
