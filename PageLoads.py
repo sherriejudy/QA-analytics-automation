@@ -6,6 +6,7 @@ from requests import get
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import sys
+import time
 
 # Function to download analytics data for all navigation links on the website
 # Parses through the HTML navigation bar and uses the extension to download data
@@ -33,14 +34,14 @@ def endPointHits(websiteURL, userDir, extensionPath, driverPath):
     # Finding all navigation links for page load testing
     endPoints = []
     navLinks = htmlSoup.find('nav').find_all('a')
-    
+
     for link in navLinks:
         # value of href attribute of each tag
         href = link.get('href')
 
         if href != None:
             # checking for full links vs end points
-            if href.find('http') == -1: 
+            if href.find('http') == -1:
                 href = websiteURL + href
             # Standardizing URL
             if href[-1] == '/':
@@ -63,7 +64,7 @@ def endPointHits(websiteURL, userDir, extensionPath, driverPath):
 
     f.close()
 
-    # Loads modified Adobe extension from directory and adds it to Selenium instance. 
+    # Loads modified Adobe extension from directory and adds it to Selenium instance.
     unpacked_extension_path = extensionPath
     options = Options()
 
@@ -72,5 +73,6 @@ def endPointHits(websiteURL, userDir, extensionPath, driverPath):
 
     # Downloading Page Load analytics for each page in CSV format
     for page in endPoints:
+        print(page)
         driver.get(page)
 

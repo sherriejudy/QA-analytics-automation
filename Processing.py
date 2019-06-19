@@ -67,7 +67,7 @@ def CSV_prettifier(path):
     frame = pd.concat(li, axis=1, sort='False')
     di.update({'Summary' : frame})
     
-    writer = pd.ExcelWriter(path+ '/' +'shaw-pageloads.xlsx', engine='xlsxwriter')
+    writer = pd.ExcelWriter(path+ '/' +'Shaw-pageloads.xlsx', engine='xlsxwriter')
     
     # Write each sheet to .xlsx file.
     for sheet in di.keys():
