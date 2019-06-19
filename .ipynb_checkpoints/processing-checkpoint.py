@@ -3,7 +3,7 @@
 # - Input: path of raw CSV files.
 # - Output: CSV (single sheet)/XLSX (multiple sheets) files with improved readability.
 
-# In[7]:
+# In[4]:
 
 
 def CSV_prettifier(path):
@@ -15,7 +15,6 @@ def CSV_prettifier(path):
     """
     
     import pandas as pd
-    import numpy as np
     import os
     import glob
     
@@ -24,7 +23,7 @@ def CSV_prettifier(path):
     
     ep = pd.read_csv(path+ '/' +'Endpoints.csv', names=['Endpoints'])
     dup_ep = ep
-    dup_ep['Success?'] = np.nan
+    dup_ep['Result'] = 'FAILURE/REDIRECTED'
     
     # Remove any csv files that aren't part of analytics output.
     for file in all_files:
@@ -49,16 +48,10 @@ def CSV_prettifier(path):
         url = df.loc['Current URL        '][0].strip()
         if url[-1] == '/':
             url = url[:-1]
-        else:
-            pass
-        if url not in list(ep['Endpoints']):
-            print('Failed:', url)
-            #failure.append(url)
-        else:
-            print('Success', url)
-            #success.append(url)
+            
+        if url in list(ep['Endpoints']):
             i = ep[ep['Endpoints'] == url].index
-            dup_ep['Success?'][i] = True
+            dup_ep['Result'][i] = 'SUCCESS'
             
         
         # Setting the name of each sheet to the webpage name.
@@ -68,7 +61,7 @@ def CSV_prettifier(path):
             di.update({ 'home' : df})
         
         # Delete raw csv file after use.
-        #os.remove(x)
+        os.remove(x)
     
     # Concat list of dataframes to generate summary page.
     frame = pd.concat(li, axis=1, sort='False')
@@ -80,6 +73,7 @@ def CSV_prettifier(path):
     for sheet in di.keys():
         di[sheet].to_excel(writer, sheet_name=sheet, index=True)
     
-    dup_ep.fillna('False')
+    #dup_ep.fillna('FAILURE/REDIRECTED')
     dup_ep.to_csv(path+ '/' +'Endpoints-final.csv',index=False)
     writer.save()
+
