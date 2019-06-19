@@ -1,13 +1,7 @@
-#!/usr/bin/env python
-# coding: utf-8
-
 # ### CSV Prettifier
 # 
 # - Input: path of raw CSV files.
 # - Output: CSV (single sheet)/XLSX (multiple sheets) files with improved readability.
-
-# In[21]:
-
 
 def CSV_prettifier(path):
     
@@ -24,9 +18,13 @@ def CSV_prettifier(path):
     # Read all csv files in specified path.
     all_files = glob.glob1(path,"*csv")
     
+    ep = pd.read_csv(path+ '/' +'Endpoints.csv', names=['Endpoints'])
+    
     # Remove any csv files that aren't part of analytics output.
     for file in all_files:
-        if file[0:24] != 'adobe-analytics-data-raw':
+        if file[0:24] == 'adobe-analytics-data-raw':
+            pass
+        else:
             all_files.remove(file)
         
     li = []
@@ -38,6 +36,17 @@ def CSV_prettifier(path):
         df = pd.read_csv(x, index_col=None, header=0, sep='~~', engine='python')
         df.set_index('Report Suite ID    ', inplace=True)
         li.append(df)
+        
+        # If URL is isn't in the endpoints file, FAILED.
+        url = df.loc['Current URL        '][0].strip()
+        if url[-1] == '/':
+            url = url[:-1]
+        else:
+            pass
+        if url not in list(ep['Endpoints']):
+            print('Failed:', url)
+        else:
+            print('Success', url)
         
         # Setting the name of each sheet to the webpage name.
         if len(df.iloc[0][0]) <= 31:
@@ -52,29 +61,10 @@ def CSV_prettifier(path):
     frame = pd.concat(li, axis=1, sort='False')
     di.update({'Summary' : frame})
     
-    writer = pd.ExcelWriter('ShawQA-sheets.xlsx', engine='xlsxwriter')
+    writer = pd.ExcelWriter(path+ '/' +'shawQA-sheets.xlsx', engine='xlsxwriter')
     
     # Write each sheet to .xlsx file.
     for sheet in di.keys():
         di[sheet].to_excel(writer, sheet_name=sheet, index=True)
 
     writer.save()
-
-
-# In[22]:
-
-
-path = '/Users/adekadam/Documents/GitHub/shaw-data-bot/hits'
-
-
-# In[23]:
-
-
-CSV_prettifier(path)
-
-
-# In[ ]:
-
-
-
-
