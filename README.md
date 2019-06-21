@@ -1,4 +1,4 @@
-### Shaw Analytics Bot
+# Shaw Analytics Bot
 
 Parses the website's HTML code, gets the Adobe analytics data for all the navigation links and processes the data, providing an Excel sheet output of the processed information.
 
@@ -33,6 +33,14 @@ Parses the website's HTML code, gets the Adobe analytics data for all the naviga
 
 The project opens a Chrome window and navigates to various links found on the provided website. The final output is an Excel sheet, containing the processed Adobe Analytics data, in the Downloads folder of the user.
 
+### Built With
+
+```
+* Python
+* Selenium Webdriver
+* Pandas
+* Beautiful Soup
+```
 
 
 
