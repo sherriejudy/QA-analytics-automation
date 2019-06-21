@@ -40,6 +40,7 @@ The project opens a Chrome window and navigates to various links found on the pr
 * Selenium Webdriver
 * Pandas
 * Beautiful Soup
+* Adobe Experience Cloud Debugger
 ```
 
 
