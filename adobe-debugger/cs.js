@@ -54,36 +54,34 @@ var formatAdobeAnalyticsPixel = {
 		console.group(this.output[0]);
 		test=[];
 
-        # wait goes here
-        //setTimeout(function() {
-            for(var i=1; i<this.output.length; i++) {
-                var prefix = this.output[i]['css'] ? '%c' : '';
-                var css = this.output[i]['css'] ? this.output[i]['css'] : '';
-                if(this.output[i]['info'])
-                    console.info(prefix + this.output[i]['info'], css)
-                else{
-                    // Gathering analytics data in the test array
-                    test.push(this.output[i]['line'].replace(':','~~'));
-                    console.log(prefix + this.output[i]['line'], css)
-                }
-            };
+		for(var i=1; i<this.output.length; i++) {
+			var prefix = this.output[i]['css'] ? '%c' : '';
+			var css = this.output[i]['css'] ? this.output[i]['css'] : '';
+			if(this.output[i]['info'])
+				console.info(prefix + this.output[i]['info'], css)
+			else{
+                // Gathering analytics data in the test array
+				test.push(this.output[i]['line'].replace(':','~~'));
+				console.log(prefix + this.output[i]['line'], css)
+			}
+		}
+    
+        // Creating CSV formatted data from the analytics data
+		// window.open('data:text/csv;charset=utf-8,' + encodeURI(test.join('\n')));
+		var encodedURI = 'data:text/csv;charset=utf-8,' + encodeURI(test.join('\n'));
+        
+        // Creating a temporary link for downloading the encoded CSV data
+		var link = document.createElement("a");
+		link.setAttribute("href", encodedURI);
+		link.setAttribute("download", "adobe-analytics-data-raw.csv");
+		link.style.visibility = 'hidden';
+		document.body.appendChild(link); // Required for FF
 
-            // Creating CSV formatted data from the analytics data
-            // window.open('data:text/csv;charset=utf-8,' + encodeURI(test.join('\n')));
-            var encodedURI = 'data:text/csv;charset=utf-8,' + encodeURI(test.join('\n'));
+		link.click();
 
-            // Creating a temporary link for downloading the encoded CSV data
-            var link = document.createElement("a");
-            link.setAttribute("href", encodedURI);
-            link.setAttribute("download", "adobe-analytics-data-raw.csv");
-            link.style.visibility = 'hidden';
-            document.body.appendChild(link); // Required for FF
-
-            link.click();
-            console.groupEnd();
-            this.output = [];
-            this.no++;
-        //}, 3000);
+		console.groupEnd();
+		this.output = [];
+		this.no++;
 	},
 
 	setTitle: function() {
