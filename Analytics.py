@@ -10,6 +10,7 @@ import platform
 opSys = platform.system()
 
 if opSys == 'Windows':
+    print('Running on Windows...')
     # Home directory system path
     homeDir = os.path.expanduser('~')
     # System path to the cloned repository (eg. /Users/JohnDoe/Documents/shaw-data-bot)
@@ -22,6 +23,7 @@ if opSys == 'Windows':
     # Processing and collating analytics data
     Processing.CSV_prettifier(homeDir + '\Downloads')
 else:
+    print('Running on Darwin...')
     # Home directory system path
     homeDir = os.path.expanduser('~')
     # System path to the cloned repository (eg. /Users/JohnDoe/Documents/shaw-data-bot)

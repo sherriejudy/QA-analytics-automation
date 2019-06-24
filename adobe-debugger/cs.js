@@ -49,13 +49,13 @@ var formatAdobeAnalyticsPixel = {
 			}
 		}
 	},
-    
+
 	printInfo: function() {
 		console.group(this.output[0]);
 		test=[];
-        
+
         # wait goes here
-        setTimeout(function() {
+        //setTimeout(function() {
             for(var i=1; i<this.output.length; i++) {
                 var prefix = this.output[i]['css'] ? '%c' : '';
                 var css = this.output[i]['css'] ? this.output[i]['css'] : '';
@@ -83,10 +83,7 @@ var formatAdobeAnalyticsPixel = {
             console.groupEnd();
             this.output = [];
             this.no++;
-        }, 3000);
-        
-
-		
+        //}, 3000);
 	},
 
 	setTitle: function() {
