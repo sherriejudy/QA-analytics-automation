@@ -1,21 +1,14 @@
 # Main script for page loads analytics
+
 # Import required modules
 import PageLoads
 import Processing
 import os
 import sys
-import platform
 
-# OS
-opSys = platform.system()
+from pathlib import Path, PureWindowsPath
 
-# For system paths
-if opSys == 'Windows':
-    slash = "\\"
-else:
-    slash = '/'
-
-print('Running on', opSys,'...')
+print('Running...')
 # Home directory system path
 homeDir = os.path.expanduser('~')
 # System path to the cloned repository (eg. /Users/JohnDoe/Documents/shaw-data-bot)
@@ -24,6 +17,8 @@ repoPath = os.path.dirname(os.path.abspath(__file__))
 websiteURL = sys.argv[1]
 
 # Finding all navigation links and the associated analytics data
-PageLoads.endPointHits(websiteURL, homeDir, repoPath + slash + 'adobe-debugger', repoPath + slash + 'chromedriver')
+PageLoads.endPointHits(websiteURL, homeDir, Path(repoPath + '/adobe-debugger'), Path(repoPath + '/chromedriver'))
 # Processing and collating analytics data
-Processing.CSV_prettifier(homeDir + slash + 'Downloads')
+Processing.CSV_prettifier(Path(homeDir + '/Downloads'))
+
+print('Complete.')
