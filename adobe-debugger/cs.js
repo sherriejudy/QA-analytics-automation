@@ -82,6 +82,7 @@ var formatAdobeAnalyticsPixel = {
 		console.groupEnd();
 		this.output = [];
 		this.no++;
+
 	},
 
 	setTitle: function() {
