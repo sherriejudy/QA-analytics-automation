@@ -1,5 +1,4 @@
 # Main script for page loads analytics
-
 # Import required modules
 import PageLoads
 import Processing
@@ -7,13 +6,14 @@ import os
 import sys
 import platform
 
+# OS
 opSys = platform.system()
 
+# For system paths
 if opSys == 'Windows':
-    slash = '\'
+    slash = "\\"
 else:
     slash = '/'
-
 
 print('Running on', opSys,'...')
 # Home directory system path
