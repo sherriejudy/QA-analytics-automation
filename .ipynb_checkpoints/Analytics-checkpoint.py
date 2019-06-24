@@ -3,16 +3,22 @@
 # Import required modules
 import PageLoads
 import Processing
+import os
+import sys
 
-websiteURL = 'https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca'
-extensionPath = '/Users/rammangl1/Desktop/ShawWeb/shaw-data-bot/adobe-debugger'
-driverPath = '/Users/rammangl1/Desktop/ShawWeb/shaw-data-bot/chromedriver'
-userDir = '/Users/rammangl1'
+from pathlib import Path, PureWindowsPath
 
+print('Running...')
+# Home directory system path
+homeDir = os.path.expanduser('~')
+# System path to the cloned repository (eg. /Users/JohnDoe/Documents/shaw-data-bot)
+repoPath = os.path.dirname(os.path.abspath(__file__))
+# Website to be tested as a command line argument
+websiteURL = sys.argv[1]
 
-PageLoads.endPointHits(websiteURL, userDir, extensionPath, driverPath)
-Processing.CSV_prettifier(userDir + '/Downloads')
+# Finding all navigation links and the associated analytics data
+PageLoads.endPointHits(websiteURL, homeDir, str(Path(repoPath + '/adobe-debugger')), str(Path(repoPath + '/chromedriver')))
+# Processing and collating analytics data
+Processing.CSV_prettifier(str(Path(homeDir + '/Downloads')))
 
-
-
-
+print('Complete.')

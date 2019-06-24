@@ -14,12 +14,12 @@ def endPointHits(websiteURL, userDir, extensionPath, driverPath):
     """
         websiteURL: URL for the page to be analysed
         userDir: system path for user's directory (eg. '/Users/JohnDoe')
-        extensionPath: system path for unpacked Adobe extension 
+        extensionPath: system path for unpacked Adobe extension
             (eg. '/Users/JohnDoe/Documents/data-bot/adobe-debugger')
         driverPath: system path for Chrome driver
             (eg. '/Users/JohnDoe/Documents/data-bot/chromedriver')
     """
-    
+
     # Creating a Beautiful Soup Object with website's
     # Home page HTML
     try:
@@ -58,7 +58,7 @@ def endPointHits(websiteURL, userDir, extensionPath, driverPath):
         sys.exit(1)
 
     # Exporting web endpoints to a CSV file
-    with open(userDir + '/Downloads/Endpoints.csv', 'w') as f:
+    with open(str(Path(userDir + '/Downloads/Endpoints.csv')), 'w') as f:
         # Joining links with newline delimiter to create rows
         f.write('\n'.join(endPoints))
 
@@ -75,4 +75,3 @@ def endPointHits(websiteURL, userDir, extensionPath, driverPath):
     for page in endPoints:
         driver.get(page)
         time.sleep(2)
-
