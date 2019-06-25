@@ -17,7 +17,7 @@ def CSV_prettifier(path):
     import pandas as pd
     import os
     import glob
-    from pathlib import Path, PureWindowsPath
+    from pathlib import Path
 
     # Read all csv files in specified path.
     all_files = glob.glob1(path,"*csv")
