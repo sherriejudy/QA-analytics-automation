@@ -24,7 +24,7 @@ def productString(path, fileName):
     filePath = path + '/' + allFiles[-1]
     xl = pd.read_excel(fileName, sheetname=None, index_col=0)
 
-    
+
 
 
 
