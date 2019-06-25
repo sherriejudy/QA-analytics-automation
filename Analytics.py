@@ -2,11 +2,11 @@
 
 # Import required modules
 import PageLoads
-import Processing
+import PageProcessing
 import os
 import sys
 
-from pathlib import Path, PureWindowsPath
+from pathlib import Path
 
 print('Running...')
 # Home directory system path
@@ -19,6 +19,6 @@ websiteURL = sys.argv[1]
 # Finding all navigation links and the associated analytics data
 PageLoads.endPointHits(websiteURL, homeDir, str(Path(repoPath + '/adobe-debugger')), str(Path(repoPath + '/chromedriver')))
 # Processing and collating analytics data
-# Processing.CSV_prettifier(str(Path(homeDir + '/Downloads')))
+PageProcessing.CSV_prettifier(str(Path(homeDir + '/Downloads')))
 
 print('Complete.')
