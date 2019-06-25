@@ -19,24 +19,21 @@ def CSVProcessing(path, finalName, endpointsName, formProcess):
     import glob
     from pathlib import Path
 
-    # Read all csv files in specified path.
+    # Read all csv files in specified path
     all_files = glob.glob1(path,"*csv")
 
     ep = pd.read_csv(str(Path(path+ '/Endpoints.csv')), names=['Endpoints'])
     dup_ep = ep
     dup_ep['Result'] = 'FAILURE/REDIRECTED'
 
-    # Remove any csv files that aren't part of analytics output.
+    # Remove any csv files that aren't part of analytics output
     for file in all_files:
-        if file[0:24] == 'adobe-analytics-data-raw':
-            pass
-        else:
+        if file[0:24] != 'adobe-analytics-data-raw':
+            # Remove from files list
             all_files.remove(file)
 
     li = []
     di = {}
-    #failure = []
-    #success = []
 
     # Read csv files to pandas and append to `li` for summary page and `di` for indiv sheets.
     for filename in all_files:
@@ -54,8 +51,7 @@ def CSVProcessing(path, finalName, endpointsName, formProcess):
             i = ep[ep['Endpoints'] == url].index
             dup_ep['Result'][i] = 'SUCCESS'
 
-
-        # Setting the name of each sheet to the webpage name.
+        # Setting the name of each sheet to the web page name.
         if len(df.iloc[0][0]) <= 31:
             di.update({ df.iloc[0][0] : df})
         elif len(df.iloc[0][0]) > 31:
@@ -74,10 +70,8 @@ def CSVProcessing(path, finalName, endpointsName, formProcess):
     for sheet in di.keys():
         di[sheet].to_excel(writer, sheet_name=sheet, index=True)
 
-    if not formProcess:
-        dup_ep.to_csv(str(Path(path+ '/' + endpointsName)), index=False)
-
+    # Save analytics file
     writer.save()
 
-    if formProcess:
-        # product string parsing from the correct datasheet
+    if not formProcess:
+        dup_ep.to_csv(str(Path(path+ '/' + endpointsName)), index=False)
