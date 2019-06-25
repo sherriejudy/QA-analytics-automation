@@ -12,7 +12,6 @@ var formatAdobeAnalyticsPixel = {
 	init: function(details) {
 
 		this.setData(details);
-
 		this.setTitle();
 		this.setHeader();
 		this.setMainBody();
@@ -34,14 +33,14 @@ var formatAdobeAnalyticsPixel = {
 		if(details.method == 'POST' && details.post_query) {
 			this.query_string = details.post_query;
 			this.server_call_length = (details.url+details.post_query).length;
-		}
-		else if(details.url) {
+		} else if(details.url) {
 			this.query_string = details.url.split('?')[1] ? details.url.split('?')[1] : '';
 			this.server_call_length = details.url.length;
 		}
-		this.params = this.query_string ? this.query_string.split('&') : [];
 
+		this.params = this.query_string ? this.query_string.split('&') : [];
 		this.query = {};
+
 		for (var k in this.params) {
 			if (this.params.hasOwnProperty(k)) {
 				var tmp = this.params[k].split('=');
@@ -134,29 +133,31 @@ var formatAdobeAnalyticsPixel = {
 
 	getProducts: function(products) {
 
-		dictProducts = {
-			0: 'Category   : ',
-			1: 'Product    : ',
-			2: 'Quantity   : ',
-			3: 'Price      : ',
-			4: 'Events     : ',
-			5: 'eVars      : '
-		}
+		// dictProducts = {
+		// 	0: 'Category   : ',
+		// 	1: 'Product    : ',
+		// 	2: 'Quantity   : ',
+		// 	3: 'Price      : ',
+		// 	4: 'Events     : ',
+		// 	5: 'eVars      : '
+		// }
 
-		var format = '\n';
-		var products = products.split(',');
-		for (var i=0; i<products.length; i++) {
-			format = format + (i==0?'':'\n') + '    #' + (i+1) + '\n';
-			item = products[i].split(';');
-			for (var y=0; y<item.length; y++) {
-				if(item[y]) {
-					format += (y <= 5) ? '    ' + dictProducts[y] : '    ';
-					format += item[y] + '\n';
-				}
-			}
-		}
+		// var format = '\n';
+		// var products = products.split(',');
+		// for (var i=0; i<products.length; i++) {
+		// 	format = format + (i==0?'':'\n') + '    #' + (i+1) + '\n';
+		// 	item = products[i].split(';');
+		// 	for (var y=0; y<item.length; y++) {
+		// 		if(item[y]) {
+		// 			format += (y <= 5) ? '    ' + dictProducts[y] : '    ';
+		// 			format += item[y] + '\n';
+		// 		}
+		// 	}
+		// }
 
-		return format;
+		// return format;
+		return products;
+
 	},
 
 	setFooter: function() {
