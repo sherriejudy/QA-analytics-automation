@@ -1,4 +1,4 @@
-# ### CSV Prettifier
+# ### CSV Processing
 #
 # - Input: path of raw CSV files.
 # - Output: CSV (single sheet)/XLSX (multiple sheets) files with improved readability.
@@ -6,7 +6,7 @@
 # In[4]:
 
 
-def CSV_prettifier(path):
+def CSVProcessing(path, finalName, endpointsName, formProcess):
 
     """
     Input: path of raw .csv files from adobe debugger extension.
@@ -68,12 +68,16 @@ def CSV_prettifier(path):
     frame = pd.concat(li, axis=1, sort='False')
     di.update({'Summary' : frame})
 
-    writer = pd.ExcelWriter(str(Path(path+ '/Shaw-pageloads.xlsx')), engine='xlsxwriter')
+    writer = pd.ExcelWriter(str(Path(path+ '/' + finalName)), engine='xlsxwriter')
 
     # Write each sheet to .xlsx file.
     for sheet in di.keys():
         di[sheet].to_excel(writer, sheet_name=sheet, index=True)
 
-    #dup_ep.fillna('FAILURE/REDIRECTED')
-    dup_ep.to_csv(str(Path(path+ '/Endpoints-final.csv')),index=False)
+    if not formProcess:
+        dup_ep.to_csv(str(Path(path+ '/' + endpointsName)), index=False)
+
     writer.save()
+
+    if formProcess:
+        # product string parsing from the correct datasheet

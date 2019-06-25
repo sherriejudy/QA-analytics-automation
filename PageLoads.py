@@ -7,7 +7,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import sys
 import time
-from pathlib import Path, PureWindowsPath
+from pathlib import Path
 
 # Function to download analytics data for all navigation links on the website
 # Parses through the HTML navigation bar and uses the extension to download data
