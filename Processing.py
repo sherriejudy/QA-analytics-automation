@@ -98,7 +98,6 @@ def CSVProcessing(path, endpoints, outfile, forms = False):
                 dup_ep['Result'][i] = 'SUCCESS'
 
             dup_ep.to_csv(str(Path(path + '/' + endpoints)), index=False)
-            writer.save()
 
             os.remove(str(Path(path + '/Endpoints.csv')))
 
@@ -120,3 +119,5 @@ def CSVProcessing(path, endpoints, outfile, forms = False):
     # Write each sheet to .xlsx file.
     for sheet in di.keys():
         di[sheet].to_excel(writer, sheet_name=sheet, index=True)
+
+    writer.save()
