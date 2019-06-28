@@ -1,4 +1,4 @@
-# Main script for page loads analytics
+# Main script for Form analytics
 
 # Import required modules
 import AnalyticsHits
@@ -12,11 +12,9 @@ print('Running...')
 homeDir = os.path.expanduser('~')
 # System path to the cloned repository (eg. /Users/JohnDoe/Documents/shaw-data-bot)
 repoPath = os.path.dirname(os.path.abspath(__file__))
-# Website to be tested as a command line argument
-websiteURL = sys.argv[1]
+# Form to be tested as a command line argument
+formName = sys.argv[1]
 
-# Finding all navigation links and the associated analytics data
-AnalyticsHits.endPointHits(websiteURL, homeDir, str(Path(repoPath + '/adobe-debugger')), str(Path(repoPath + '/chromedriver')))
 # Processing and collating analytics data
 Processing.CSVProcessing(str(Path(homeDir + '/Downloads')), 'PageLoad-Endpoints.csv', 'PageLoad-Analytics.xlsx')
 
