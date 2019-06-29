@@ -6,9 +6,9 @@
 def prodStr (df):
     '''
     df: pandas dataframe that needs product string parsing.
-    output: product string (type:str)
+    output: product string to text file (type:str)
     '''
-    
+
     # Delimiters for product string in order is: (1) ',' (2) ';'
     products = df.loc['Products'][0].strip()
     products = products.split(',')
@@ -40,9 +40,14 @@ def prodStr (df):
 def CSV_prettifier(path, endpoints, outfile, forms = False):
 
     """
-    Input: path of raw .csv files from adobe debugger extension.
-    (i.e. path = '/Users/[username]/Downloads')
-    Output: .xlsx file with individual sheets for every hit + summary sheet.
+    This function takes the raw csv files from the adobe debugger chrome extension and makes them more readable.
+
+    Parameters
+    ----------
+    path : system file path to folder with raw csv files (type: string).
+    endpoints : name of endpoints file from pageloads or link clicks (type: string).
+    outfile : name of output .xlsx file with summary page and individual pages (type: string).
+    forms : if the function needs to perform form filling or not, False by default (type: bool).
     """
 
     import pandas as pd
@@ -81,7 +86,7 @@ def CSV_prettifier(path, endpoints, outfile, forms = False):
             product_str = prodStr(df)
             df.loc['Products'][0] = product_str
             with open(str(Path(path + '/' + 'product-strings.txt')), "a") as text_file:
-                print(product_str, file=text_file)
+                print(df.iloc[0][0] + '\n' + product_str, file=text_file)
             text_file.close()
 
         li.append(df)
@@ -89,7 +94,7 @@ def CSV_prettifier(path, endpoints, outfile, forms = False):
         # If we aren't form filling, then compare current URL to endpoints URLs.
         if not forms:
             # If URL is isn't in the endpoints file, FAILED.
-            url = df.loc['Current URL        '][0].strip()
+            url = df.loc['Current URL'][0].strip()
             if url[-1] == '/':
                 url = url[:-1]
 
@@ -115,6 +120,7 @@ def CSV_prettifier(path, endpoints, outfile, forms = False):
     # Write each sheet to .xlsx file.
     for sheet in di.keys():
         di[sheet].to_excel(writer, sheet_name=sheet, index=True)
+    if not forms:
+        dup_ep.to_csv(str(Path(path + '/' + endpoints)), index=False)
 
-    dup_ep.to_csv(str(Path(path + '/' + endpoints)), index=False)
     writer.save()
