@@ -1,13 +1,10 @@
 # Main script for page loads analytics
 
 # Import required modules
-import PageLoads
+import AnalyticsHits
 import Processing
 import os
 import sys
-import ProductString
-import CartForm
-
 from pathlib import Path
 
 print('Running...')
@@ -19,7 +16,7 @@ repoPath = os.path.dirname(os.path.abspath(__file__))
 websiteURL = sys.argv[1]
 
 # Finding all navigation links and the associated analytics data
-PageLoads.endPointHits(websiteURL, homeDir, str(Path(repoPath + '/adobe-debugger')), str(Path(repoPath + '/chromedriver')))
+AnalyticsHits.endPointHits(websiteURL, homeDir, str(Path(repoPath + '/adobe-debugger')), str(Path(repoPath + '/chromedriver')))
 # Processing and collating analytics data
 Processing.CSV_prettifier(str(Path(homeDir + '/Downloads')), 'Endpoints.csv', 'Shaw-formfill.xlsx', True)
 # Shopping cart form filling

@@ -3,7 +3,7 @@
 # - Input: path of raw CSV files.
 # - Output: CSV (single sheet)/XLSX (multiple sheets) files with improved readability.
 
-def prodStr (df):
+def prodStr(df):
     '''
     df: pandas dataframe that needs product string parsing.
     output: product string to text file (type:str)
@@ -37,7 +37,7 @@ def prodStr (df):
         count = count + 1
     return prostr
 
-def CSV_prettifier(path, endpoints, outfile, forms = False):
+def CSVProcessing(path, endpoints, outfile, forms = False):
 
     """
     This function takes the raw csv files from the adobe debugger chrome extension and makes them more readable.
@@ -60,7 +60,7 @@ def CSV_prettifier(path, endpoints, outfile, forms = False):
 
     # If forms is set to False, open endpoints and set all links to 'FAILED' status.
     if not forms:
-        ep = pd.read_csv(str(Path(path + '/' + endpoints)), names=['Endpoints'])
+        ep = pd.read_csv(str(Path(path + '/Endpoints.csv')), names=['Endpoints'])
         dup_ep = ep
         dup_ep['Result'] = 'FAILURE/REDIRECTED'
 
@@ -101,6 +101,10 @@ def CSV_prettifier(path, endpoints, outfile, forms = False):
             if url in list(ep['Endpoints']):
                 i = ep[ep['Endpoints'] == url].index
                 dup_ep['Result'][i] = 'SUCCESS'
+
+            dup_ep.to_csv(str(Path(path + '/' + endpoints)), index=False)
+
+            os.remove(str(Path(path + '/Endpoints.csv')))
 
         # Setting the name of each sheet to the webpage name.
         if len(df.iloc[0][0]) <= 31:
