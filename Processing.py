@@ -3,12 +3,12 @@
 # - Input: path of raw CSV files.
 # - Output: CSV (single sheet)/XLSX (multiple sheets) files with improved readability.
 
-def prodStr(df):
+def prodStr (df):
     '''
     df: pandas dataframe that needs product string parsing.
     output: product string to text file (type:str)
     '''
-
+    
     # Delimiters for product string in order is: (1) ',' (2) ';'
     products = df.loc['Products'][0].strip()
     products = products.split(',')
@@ -37,11 +37,11 @@ def prodStr(df):
         count = count + 1
     return prostr
 
-def CSVProcessing(path, endpoints, outfile, forms = False):
+def CSV_prettifier(path, endpoints = None, outfile, forms = False):
 
     """
     This function takes the raw csv files from the adobe debugger chrome extension and makes them more readable.
-
+    
     Parameters
     ----------
     path : system file path to folder with raw csv files (type: string).
@@ -60,9 +60,12 @@ def CSVProcessing(path, endpoints, outfile, forms = False):
 
     # If forms is set to False, open endpoints and set all links to 'FAILED' status.
     if not forms:
-        ep = pd.read_csv(str(Path(path + '/Endpoints.csv')), names=['Endpoints'])
-        dup_ep = ep
-        dup_ep['Result'] = 'FAILURE/REDIRECTED'
+        try:
+            ep = pd.read_csv(str(Path(path + '/' + endpoints)), names=['Endpoints'])
+            dup_ep = ep
+            dup_ep['Result'] = 'FAILURE/REDIRECTED'
+        except:
+            raise ValueError('No endpoints csv file specified.')
 
     # Remove any csv files that aren't part of analytics output from the list (doesn't delete files).
     for file in all_files:
@@ -102,10 +105,6 @@ def CSVProcessing(path, endpoints, outfile, forms = False):
                 i = ep[ep['Endpoints'] == url].index
                 dup_ep['Result'][i] = 'SUCCESS'
 
-            dup_ep.to_csv(str(Path(path + '/' + endpoints)), index=False)
-
-            os.remove(str(Path(path + '/Endpoints.csv')))
-
         # Setting the name of each sheet to the webpage name.
         if len(df.iloc[0][0]) <= 31:
             di.update({df.iloc[0][0]: df})
@@ -126,5 +125,5 @@ def CSVProcessing(path, endpoints, outfile, forms = False):
         di[sheet].to_excel(writer, sheet_name=sheet, index=True)
     if not forms:
         dup_ep.to_csv(str(Path(path + '/' + endpoints)), index=False)
-
+        
     writer.save()
