@@ -18,7 +18,7 @@ websiteURL = sys.argv[1]
 # Finding all navigation links and the associated analytics data
 AnalyticsHits.endPointHits(websiteURL, homeDir, str(Path(repoPath + '/adobe-debugger')), str(Path(repoPath + '/chromedriver')))
 # Processing and collating analytics data
-Processing.CSV_prettifier(str(Path(homeDir + '/Downloads')), 'Endpoints.csv', 'Shaw-formfill.xlsx', True)
+Processing.CSV_prettifier(str(Path(homeDir + '/Downloads')), 'Shaw-formfill.xlsx', 'Endpoints.csv', True)
 # Shopping cart form filling
 # cartFormFilling(str(Path(repoPath + '/adobe-debugger')), str(Path(repoPath + '/chromedriver')))
 

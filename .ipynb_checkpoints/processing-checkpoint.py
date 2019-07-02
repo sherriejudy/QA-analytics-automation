@@ -37,7 +37,7 @@ def prodStr (df):
         count = count + 1
     return prostr
 
-def CSV_prettifier(path, endpoints = None, outfile, forms = False):
+def CSV_prettifier(path, outfile, endpoints = None, forms = False):
 
     """
     This function takes the raw csv files from the adobe debugger chrome extension and makes them more readable.
