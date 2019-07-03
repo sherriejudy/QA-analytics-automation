@@ -3,6 +3,11 @@
 # - Input: path of raw CSV files.
 # - Output: CSV (single sheet)/XLSX (multiple sheets) files with improved readability.
 
+def http_https (x):
+    if x[0:7] == 'http://':
+        x = x.replace('http://', 'https://', 1)
+    return x
+
 def prodStr (df):
     '''
     df: pandas dataframe that needs product string parsing.
@@ -63,6 +68,7 @@ def CSV_prettifier(path, outfile, endpoints = None, forms = False):
         try:
             ep = pd.read_csv(str(Path(path + '/' + endpoints)), names=['Endpoints'])
             dup_ep = ep
+            dup_ep['Endpoints'] = dup_ep['Endpoints'].apply(lambda x: http_https(x))
             dup_ep['Result'] = 'FAILURE/REDIRECTED'
         except:
             raise ValueError('No endpoints csv file specified.')
@@ -106,13 +112,15 @@ def CSV_prettifier(path, outfile, endpoints = None, forms = False):
                 dup_ep['Result'][i] = 'SUCCESS'
 
         # Setting the name of each sheet to the webpage name.
-        if len(df.iloc[0][0]) <= 31:
+        if df.iloc[0][0] == ' https://www.shaw.ca/':
+            di.update({'shawca': df})
+        elif len(df.iloc[0][0]) <= 31:
             di.update({df.iloc[0][0]: df})
         elif len(df.iloc[0][0]) > 31:
             di.update({'home': df})
 
         # Delete raw csv file after use.
-        os.remove(x)
+        #os.remove(x)
 
     # Concat list of dataframes to generate summary page.
     frame = pd.concat(li, axis=1, sort='False')
