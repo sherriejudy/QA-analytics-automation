@@ -5,9 +5,6 @@ import AnalyticsHits
 import Processing
 import os
 import sys
-import ProductString
-import CartForm
-
 from pathlib import Path
 
 print('Running...')
@@ -21,7 +18,7 @@ websiteURL = sys.argv[1]
 # Finding all navigation links and the associated analytics data
 AnalyticsHits.endPointHits(websiteURL, homeDir, str(Path(repoPath + '/adobe-debugger')), str(Path(repoPath + '/chromedriver')))
 # Processing and collating analytics data
-Processing.CSVProcessing(str(Path(homeDir + '/Downloads')))
+Processing.CSV_prettifier(str(Path(homeDir + '/Downloads')), 'Shaw-pageloads.xlsx', 'Endpoints.csv', False)
 # Shopping cart form filling
 # cartFormFilling(str(Path(repoPath + '/adobe-debugger')), str(Path(repoPath + '/chromedriver')))
 
