@@ -120,7 +120,7 @@ def CSV_prettifier(path, outfile, endpoints = None, forms = False):
             di.update({'home': df})
 
         # Delete raw csv file after use.
-        #os.remove(x)
+        os.remove(x)
 
     # Concat list of dataframes to generate summary page.
     frame = pd.concat(li, axis=1, sort='False')
