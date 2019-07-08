@@ -2,7 +2,7 @@
   "id": "a280b261-f38b-4515-91c8-5a10aee3c402",
   "version": "2.0",
   "name": "shaw-customer-endcart",
-  "url": "https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca",
+  "url": "https://shaw.ca",
   "tests": [{
     "id": "d9cd1d13-ea0a-4f9f-832e-decd7982b35a",
     "name": "shaw-new-test-form",
@@ -10,7 +10,7 @@
       "id": "f1d23a3d-81f1-44bf-a148-d71f51b34df9",
       "comment": "",
       "command": "open",
-      "target": "https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/",
+      "target": "https://shaw.ca/",
       "targets": [],
       "value": ""
     }, {
@@ -311,6 +311,6 @@
     "timeout": 300,
     "tests": ["d9cd1d13-ea0a-4f9f-832e-decd7982b35a"]
   }],
-  "urls": ["https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/"],
+  "urls": ["https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/", "https://shaw.ca/"],
   "plugins": []
 }
