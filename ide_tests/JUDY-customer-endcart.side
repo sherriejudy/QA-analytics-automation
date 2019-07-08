@@ -1,0 +1,923 @@
+{
+  "id": "a280b261-f38b-4515-91c8-5a10aee3c402",
+  "version": "2.0",
+  "name": "shaw-customer-endcart",
+  "url": "https://www.shaw.ca",
+  "tests": [{
+    "id": "d9cd1d13-ea0a-4f9f-832e-decd7982b35a",
+    "name": "shaw-new-test-form",
+    "commands": [{
+      "id": "f1d23a3d-81f1-44bf-a148-d71f51b34df9",
+      "comment": "",
+      "command": "open",
+      "target": "https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5bb8ed03-821d-4de7-8650-e79a7d8c1f2c",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1440x812",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "02d97f04-d6ee-40f7-97de-4de85d8a2b54",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='c-primary-nav-4']/a/span",
+      "targets": [
+        ["css=.c-primary-nav__category--active > span", "css:finder"],
+        ["xpath=//div[@id='c-primary-nav-4']/a/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[5]/a/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ad0c83b8-a1cb-47c3-9384-65a3939b53b8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.o-component:nth-child(1) > .c-card__container .c-card__checkout-label",
+      "targets": [
+        ["css=.o-component:nth-child(1) > .c-card__container .c-card__checkout-label", "css:finder"],
+        ["xpath=//div[3]/div/div/div/div/div/div/div[2]/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Choose this plan')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6360110e-2989-40ee-9ae1-9ee1d3aed9be",
+      "comment": "",
+      "command": "click",
+      "target": "css=.c-self-identify__show-address-container-button",
+      "targets": [
+        ["css=.c-self-identify__show-address-container-button", "css:finder"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Continue')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "56316f93-232e-4cd9-90b3-dfd8bf51348e",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=address",
+      "targets": [],
+      "value": "121 Copperfield Grove Southeast, Calgary, AB, Canada"
+    }, {
+      "id": "bfae9158-9da3-4145-aed3-6d6a9d693411",
+      "comment": "",
+      "command": "click",
+      "target": "id=ChIJXwsBHvF3cVMRpneKEZEV9SE",
+      "targets": [
+        ["id=ChIJXwsBHvF3cVMRpneKEZEV9SE", "id"],
+        ["css=#ChIJXwsBHvF3cVMRpneKEZEV9SE", "css:finder"],
+        ["xpath=//li[@id='ChIJXwsBHvF3cVMRpneKEZEV9SE']", "xpath:attributes"],
+        ["xpath=//li", "xpath:position"],
+        ["xpath=//li[contains(.,'121 Copperfield Grove Southeast, Calgary, AB, Canada')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b55a89d2-7917-4afe-8eb9-7f5e57287016",
+      "comment": "",
+      "command": "click",
+      "target": "css=.c-self-identify__validate-address-button",
+      "targets": [
+        ["css=.c-self-identify__validate-address-button", "css:finder"],
+        ["xpath=//div[2]/div[2]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "16b1ff50-aa7c-435c-8908-ed2a138cb671",
+      "comment": "",
+      "command": "click",
+      "target": "css=.c-self-identify__container--serviceable-cart .c-self-identify__primary-button",
+      "targets": [
+        ["css=.c-self-identify__container--serviceable-cart .c-self-identify__primary-button", "css:finder"],
+        ["xpath=//div[3]/div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Go to cart')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "abf5abe6-93d2-4af0-bdb8-ab1a339dfbb0",
+      "comment": "",
+      "command": "click",
+      "target": "css=.c-cart__checkout-btn-container--desktop span",
+      "targets": [
+        ["css=.c-cart__checkout-btn-container--desktop span", "css:finder"],
+        ["xpath=//section[2]/div/div/div/div[3]/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dbd88f32-93a8-4c98-af53-3207b8b65489",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=firstName",
+      "targets": [
+        ["id=firstName", "id"],
+        ["name=firstName", "name"],
+        ["css=#firstName", "css:finder"],
+        ["xpath=//input[@id='firstName']", "xpath:attributes"],
+        ["xpath=//div[3]/div/div/div/input", "xpath:position"]
+      ],
+      "value": "test"
+    }, {
+      "id": "912d7b9e-f311-4b43-a2d5-d423e37261c9",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=lastName",
+      "targets": [
+        ["id=lastName", "id"],
+        ["name=lastName", "name"],
+        ["css=#lastName", "css:finder"],
+        ["xpath=//input[@id='lastName']", "xpath:attributes"],
+        ["xpath=//div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": "test"
+    }, {
+      "id": "ac1b26a4-97ff-40e9-b761-f3401ea72c58",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=contactEmail",
+      "targets": [
+        ["id=contactEmail", "id"],
+        ["name=contactEmail", "name"],
+        ["css=#contactEmail", "css:finder"],
+        ["xpath=//input[@id='contactEmail']", "xpath:attributes"],
+        ["xpath=//div[4]/div/div/div/input", "xpath:position"]
+      ],
+      "value": "test@test.com"
+    }, {
+      "id": "96a162cc-dc1b-4e25-a498-56afc3541ee8",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=contactPhoneNumber",
+      "targets": [
+        ["id=contactPhoneNumber", "id"],
+        ["name=phoneNumber", "name"],
+        ["css=#contactPhoneNumber", "css:finder"],
+        ["xpath=//input[@id='contactPhoneNumber']", "xpath:attributes"],
+        ["xpath=//div[4]/div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": "416-666-6666"
+    }, {
+      "id": "28a274e6-6503-472c-a52a-9e657a3e7717",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=passphrase",
+      "targets": [
+        ["id=passphrase", "id"],
+        ["name=passphrase", "name"],
+        ["css=#passphrase", "css:finder"],
+        ["xpath=//input[@id='passphrase']", "xpath:attributes"],
+        ["xpath=//div[7]/div/div/div/input", "xpath:position"]
+      ],
+      "value": "test"
+    }, {
+      "id": "a35cc9fb-b67d-4a04-a794-9b006b2cae20",
+      "comment": "",
+      "command": "click",
+      "target": "css=.c-btn",
+      "targets": [
+        ["css=.c-btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Save and continue')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a3d617f3-872f-4f4c-90bb-9f24a1870625",
+      "comment": "",
+      "command": "click",
+      "target": "css=.c-btn",
+      "targets": [
+        ["css=.c-btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Save and continue')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "df263aa0-fa2f-4db7-8351-04ae0280c7d5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.Dropdown-arrow",
+      "targets": [
+        ["css=.Dropdown-arrow", "css:finder"],
+        ["xpath=//div[@id='installPreferenceType']/span[2]", "xpath:idRelative"],
+        ["xpath=//div/section/div/div/div/div/div/div/span[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7c4d422f-492f-4dff-a1b2-d7f2dd28466f",
+      "comment": "",
+      "command": "click",
+      "target": "css=#\\\\30",
+      "targets": [
+        ["css=.Dropdown-placeholder", "css:finder"],
+        ["xpath=//div[@id='installPreferenceType']/span/span", "xpath:idRelative"],
+        ["xpath=//span/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "302bd1a5-998b-4df8-b223-5bc5cdf9f8ee",
+      "comment": "",
+      "command": "click",
+      "target": "css=.c-btn",
+      "targets": [
+        ["css=.c-btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Save and continue')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5b2be9b7-67f3-4eb3-949b-630604cd942d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.c-btn",
+      "targets": [
+        ["css=.c-btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Save and continue')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a908e438-fd62-46ef-bcb9-c9993a6e789c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.c-btn",
+      "targets": [
+        ["css=.c-btn", "css:finder"],
+        ["xpath=(//button[@type='button'])[5]", "xpath:attributes"],
+        ["xpath=//div[2]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Read and accept agreement')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "26840f9d-3e4b-4745-bd0a-078092479bb5",
+      "comment": "",
+      "command": "click",
+      "target": "id=accepted",
+      "targets": [
+        ["id=accepted", "id"],
+        ["name=accepted", "name"],
+        ["css=#accepted", "css:finder"],
+        ["xpath=//input[@id='accepted']", "xpath:attributes"],
+        ["xpath=//label/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4c1d8758-dc0e-4e1d-bef8-c6aa928faad4",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=signature",
+      "targets": [
+        ["id=signature", "id"],
+        ["name=signature", "name"],
+        ["css=#signature", "css:finder"],
+        ["xpath=//input[@id='signature']", "xpath:attributes"],
+        ["xpath=//form/div[2]/div/input", "xpath:position"]
+      ],
+      "value": "test test"
+    }, {
+      "id": "c92454ea-f15f-4e4b-aa95-5c5419a985ff",
+      "comment": "",
+      "command": "click",
+      "target": "css=.value-plan-accept-agreement",
+      "targets": [
+        ["css=.value-plan-accept-agreement", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//p[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Accept Agreement')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0866c88a-cbd9-4f91-9402-433386bcd3ba",
+      "comment": "",
+      "command": "click",
+      "target": "css=.c-btn",
+      "targets": [
+        ["css=.c-btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[2]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Submit order')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "06eedd28-f8f5-4253-baf3-0bb7175beed3",
+    "name": "test",
+    "commands": [{
+      "id": "4c7198c6-2918-47b7-a44b-a0d5300c1163",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.shaw.ca/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "14848bc4-7dcc-4aab-a57a-bb1ab39936b8",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1440x812",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ccd25559-114c-4581-a3ba-8f31e1bc3994",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='c-primary-nav-4']/a/span",
+      "targets": [
+        ["css=.c-primary-nav__category--active > span", "css:finder"],
+        ["xpath=//div[@id='c-primary-nav-4']/a/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[5]/a/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dad857c0-6a4e-419e-ba0c-9ae83c796fb4",
+      "comment": "",
+      "command": "click",
+      "target": "css=.o-component:nth-child(1) > .c-card__container .c-card__checkout-label",
+      "targets": [
+        ["css=.o-component:nth-child(1) > .c-card__container .c-card__checkout-label", "css:finder"],
+        ["xpath=//div[3]/div/div/div/div/div/div/div[2]/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Choose this plan')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "02540634-fc75-43d1-aa45-e6e469f678db",
+      "comment": "",
+      "command": "click",
+      "target": "css=.c-self-identify__show-address-container-button",
+      "targets": [
+        ["css=.c-self-identify__show-address-container-button", "css:finder"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Continue')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1cc4de60-ab1a-4f0f-8515-84a9110cf6b7",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=address",
+      "targets": [],
+      "value": "121 Copperfield Grove Southeast, Calgary, AB, Canada"
+    }, {
+      "id": "32acac0f-e5f1-4454-ab7f-d28d3d2d9ebd",
+      "comment": "",
+      "command": "click",
+      "target": "id=ChIJXwsBHvF3cVMRpneKEZEV9SE",
+      "targets": [
+        ["id=ChIJXwsBHvF3cVMRpneKEZEV9SE", "id"],
+        ["css=#ChIJXwsBHvF3cVMRpneKEZEV9SE", "css:finder"],
+        ["xpath=//li[@id='ChIJXwsBHvF3cVMRpneKEZEV9SE']", "xpath:attributes"],
+        ["xpath=//li", "xpath:position"],
+        ["xpath=//li[contains(.,'121 Copperfield Grove Southeast, Calgary, AB, Canada')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "053ec41a-5b61-4de8-8a87-c04027917ef2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.c-self-identify__validate-address-button",
+      "targets": [
+        ["css=.c-self-identify__validate-address-button", "css:finder"],
+        ["xpath=//div[2]/div[2]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "edf79529-687c-48a3-b9b3-a808874570dc",
+      "comment": "",
+      "command": "click",
+      "target": "css=.c-self-identify__container--serviceable-cart .c-self-identify__primary-button",
+      "targets": [
+        ["css=.c-self-identify__container--serviceable-cart .c-self-identify__primary-button", "css:finder"],
+        ["xpath=//div[3]/div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Go to cart')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d65cb180-3fcc-4b42-a612-c311af1753c5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.c-cart__checkout-btn-container--desktop span",
+      "targets": [
+        ["css=.c-cart__checkout-btn-container--desktop span", "css:finder"],
+        ["xpath=//section[2]/div/div/div/div[3]/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d561052c-3a93-4cac-be47-95c8c9c9d827",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=firstName",
+      "targets": [
+        ["id=firstName", "id"],
+        ["name=firstName", "name"],
+        ["css=#firstName", "css:finder"],
+        ["xpath=//input[@id='firstName']", "xpath:attributes"],
+        ["xpath=//div[3]/div/div/div/input", "xpath:position"]
+      ],
+      "value": "test"
+    }, {
+      "id": "dc743464-9ebf-4c9b-913f-65b9884cdd30",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=lastName",
+      "targets": [
+        ["id=lastName", "id"],
+        ["name=lastName", "name"],
+        ["css=#lastName", "css:finder"],
+        ["xpath=//input[@id='lastName']", "xpath:attributes"],
+        ["xpath=//div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": "test"
+    }, {
+      "id": "62fef9dc-e895-4e60-9162-ba676bf6db47",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=contactEmail",
+      "targets": [
+        ["id=contactEmail", "id"],
+        ["name=contactEmail", "name"],
+        ["css=#contactEmail", "css:finder"],
+        ["xpath=//input[@id='contactEmail']", "xpath:attributes"],
+        ["xpath=//div[4]/div/div/div/input", "xpath:position"]
+      ],
+      "value": "test@test.com"
+    }, {
+      "id": "47acc2bf-96d8-4716-9092-cfd5a206eeeb",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=contactPhoneNumber",
+      "targets": [
+        ["id=contactPhoneNumber", "id"],
+        ["name=phoneNumber", "name"],
+        ["css=#contactPhoneNumber", "css:finder"],
+        ["xpath=//input[@id='contactPhoneNumber']", "xpath:attributes"],
+        ["xpath=//div[4]/div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": "416-666-6666"
+    }, {
+      "id": "02492da6-e602-4297-92d1-3212fb82c990",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=passphrase",
+      "targets": [
+        ["id=passphrase", "id"],
+        ["name=passphrase", "name"],
+        ["css=#passphrase", "css:finder"],
+        ["xpath=//input[@id='passphrase']", "xpath:attributes"],
+        ["xpath=//div[7]/div/div/div/input", "xpath:position"]
+      ],
+      "value": "test"
+    }, {
+      "id": "c993410c-85ec-41e0-b375-02f7771a244f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.c-btn",
+      "targets": [
+        ["css=.c-btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Save and continue')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6ce4df02-6bd4-4d98-9ec2-c0f711dcbb55",
+      "comment": "",
+      "command": "click",
+      "target": "css=.c-btn",
+      "targets": [
+        ["css=.c-btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Save and continue')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5be3b339-631e-4edc-9ba4-c2ccbd0ecdd2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.Dropdown-arrow",
+      "targets": [
+        ["css=.Dropdown-arrow", "css:finder"],
+        ["xpath=//div[@id='installPreferenceType']/span[2]", "xpath:idRelative"],
+        ["xpath=//div/section/div/div/div/div/div/div/span[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a5555f16-5cc8-4994-bbce-21656da352a9",
+      "comment": "",
+      "command": "click",
+      "target": "css=#\\\\30",
+      "targets": [
+        ["css=.Dropdown-placeholder", "css:finder"],
+        ["xpath=//div[@id='installPreferenceType']/span/span", "xpath:idRelative"],
+        ["xpath=//span/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "62a4f62f-8fe4-4d97-939d-8a2a0dd421e7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.c-btn",
+      "targets": [
+        ["css=.c-btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Save and continue')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "37931a8b-0760-4e68-9868-c442068ad8c0",
+      "comment": "",
+      "command": "click",
+      "target": "css=.c-btn",
+      "targets": [
+        ["css=.c-btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Save and continue')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5166fa70-c306-4f04-96f1-11431f6300f5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.c-btn",
+      "targets": [
+        ["css=.c-btn", "css:finder"],
+        ["xpath=(//button[@type='button'])[5]", "xpath:attributes"],
+        ["xpath=//div[2]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Read and accept agreement')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a6503e97-94e1-46ae-bc2f-a6c4caaa22d7",
+      "comment": "",
+      "command": "click",
+      "target": "id=accepted",
+      "targets": [
+        ["id=accepted", "id"],
+        ["name=accepted", "name"],
+        ["css=#accepted", "css:finder"],
+        ["xpath=//input[@id='accepted']", "xpath:attributes"],
+        ["xpath=//label/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fb9af9c0-b291-4364-a4e6-6ee245f594e4",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=signature",
+      "targets": [
+        ["id=signature", "id"],
+        ["name=signature", "name"],
+        ["css=#signature", "css:finder"],
+        ["xpath=//input[@id='signature']", "xpath:attributes"],
+        ["xpath=//form/div[2]/div/input", "xpath:position"]
+      ],
+      "value": "test test"
+    }, {
+      "id": "8f8e0f4a-5956-4b4f-92a6-3800755569b8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.value-plan-accept-agreement",
+      "targets": [
+        ["css=.value-plan-accept-agreement", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//p[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Accept Agreement')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fab602c3-73fb-4a7b-aec3-92aca17efecb",
+      "comment": "",
+      "command": "click",
+      "target": "css=.c-btn",
+      "targets": [
+        ["css=.c-btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[2]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Submit order')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "e94e91da-2e07-46c2-a4cb-05c0f9ff7506",
+    "name": "TEST-JUDY-CUSTOMER",
+    "commands": [{
+      "id": "d88521f9-5888-4fe3-94a6-aedb4d94d55a",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.shaw.ca/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b7233cef-6a84-42e3-a859-8ae7da94716b",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1440x812",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4421de45-91a2-4c77-8132-2f4bb0c33031",
+      "comment": "",
+      "command": "click",
+      "target": "css=.c-primary-nav__category--active > span",
+      "targets": [
+        ["css=.c-primary-nav__category--active > span", "css:finder"],
+        ["xpath=//div[@id='c-primary-nav-4']/a/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[5]/a/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d4c0f770-27c7-4aab-bdcb-09a3adb694cf",
+      "comment": "",
+      "command": "click",
+      "target": "css=.o-component:nth-child(1) > .c-card__container .c-card__checkout-label",
+      "targets": [
+        ["css=.o-component:nth-child(1) > .c-card__container .c-card__checkout-label", "css:finder"],
+        ["xpath=//div[3]/div/div/div/div/div/div/div[2]/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Choose this plan')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ea93cb2a-40d9-4041-b914-bceee6b65f7e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.c-self-identify__customer-option:nth-child(2) > .c-self-identify__user-input-label",
+      "targets": [
+        ["css=.c-self-identify__customer-option:nth-child(2) > .c-self-identify__user-input-label", "css:finder"],
+        ["xpath=//div[2]/label", "xpath:position"],
+        ["xpath=//label[contains(.,'Yes')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bc24ee38-3f10-4c43-b12b-78fe23f44cc2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.c-self-identify__shaw-lob-each-options:nth-child(1) > .c-self-identify__user-input-label",
+      "targets": [
+        ["css=.c-self-identify__shaw-lob-each-options:nth-child(1) > .c-self-identify__user-input-label", "css:finder"],
+        ["xpath=//div[2]/div/div/label", "xpath:position"],
+        ["xpath=//label[contains(.,'Internet')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6aa8ac42-7799-4efd-bddb-5a1ea5b1a62a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.c-self-identify__show-address-container-button",
+      "targets": [
+        ["css=.c-self-identify__show-address-container-button", "css:finder"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Continue')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b1b77b6a-746c-4b5e-a3fc-3ba184f0ed79",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=address",
+      "targets": [],
+      "value": "121 Copperfield Grove Southeast, Calgary, AB, Canada"
+    }, {
+      "id": "09f6592b-2c8d-4bfb-b6f2-c89da4035853",
+      "comment": "",
+      "command": "click",
+      "target": "id=ChIJXwsBHvF3cVMRpneKEZEV9SE",
+      "targets": [
+        ["id=ChIJXwsBHvF3cVMRpneKEZEV9SE", "id"],
+        ["css=#ChIJXwsBHvF3cVMRpneKEZEV9SE", "css:finder"],
+        ["xpath=//li[@id='ChIJXwsBHvF3cVMRpneKEZEV9SE']", "xpath:attributes"],
+        ["xpath=//li", "xpath:position"],
+        ["xpath=//li[contains(.,'121 Copperfield Grove Southeast, Calgary, AB, Canada')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "174547a2-011b-472f-9e05-47de605aaec2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.c-self-identify__validate-address-button",
+      "targets": [
+        ["css=.c-self-identify__validate-address-button", "css:finder"],
+        ["xpath=//div[2]/div[2]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b23a0856-7722-429f-bd61-23d28bb7d311",
+      "comment": "",
+      "command": "click",
+      "target": "css=.c-self-identify__container--serviceable-cart .c-self-identify__primary-button",
+      "targets": [
+        ["css=.c-self-identify__container--serviceable-cart .c-self-identify__primary-button", "css:finder"],
+        ["xpath=//div[3]/div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Go to cart')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "92e84822-82ff-4b4e-8e3e-cca593f62488",
+      "comment": "",
+      "command": "click",
+      "target": "css=.c-cart__checkout-btn-container--desktop span",
+      "targets": [
+        ["css=.c-cart__checkout-btn-container--desktop span", "css:finder"],
+        ["xpath=//section[2]/div/div/div/div[3]/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "75a76fd2-48f5-4024-acf4-b44efd7f974b",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=firstName",
+      "targets": [
+        ["id=firstName", "id"],
+        ["name=firstName", "name"],
+        ["css=#firstName", "css:finder"],
+        ["xpath=//input[@id='firstName']", "xpath:attributes"],
+        ["xpath=//div[3]/div/div/div/input", "xpath:position"]
+      ],
+      "value": "test"
+    }, {
+      "id": "18d10bf7-bd07-4f8f-9317-f764d965bee3",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=lastName",
+      "targets": [
+        ["id=lastName", "id"],
+        ["name=lastName", "name"],
+        ["css=#lastName", "css:finder"],
+        ["xpath=//input[@id='lastName']", "xpath:attributes"],
+        ["xpath=//div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": "test"
+    }, {
+      "id": "655e3a2c-0643-476e-9995-0df58b15975e",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=contactEmail",
+      "targets": [
+        ["id=contactEmail", "id"],
+        ["name=contactEmail", "name"],
+        ["css=#contactEmail", "css:finder"],
+        ["xpath=//input[@id='contactEmail']", "xpath:attributes"],
+        ["xpath=//div[4]/div/div/div/input", "xpath:position"]
+      ],
+      "value": "test@test.com"
+    }, {
+      "id": "c3d58217-8022-46ac-b914-abada9e80940",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=contactPhoneNumber",
+      "targets": [
+        ["id=contactPhoneNumber", "id"],
+        ["name=phoneNumber", "name"],
+        ["css=#contactPhoneNumber", "css:finder"],
+        ["xpath=//input[@id='contactPhoneNumber']", "xpath:attributes"],
+        ["xpath=//div[4]/div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": "416-666-6666"
+    }, {
+      "id": "e641d37f-79fc-413a-ae3f-03890c0614c2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.c-btn",
+      "targets": [
+        ["css=.c-btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Save and continue')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9a8ad04c-0667-4bfa-951b-d54dd97b8d68",
+      "comment": "",
+      "command": "click",
+      "target": "css=.c-btn",
+      "targets": [
+        ["css=.c-btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Save and continue')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b6142d46-d099-489d-96fa-a839723fd7f0",
+      "comment": "",
+      "command": "click",
+      "target": "css=.Dropdown-arrow",
+      "targets": [
+        ["css=.Dropdown-arrow", "css:finder"],
+        ["xpath=//div[@id='installPreferenceType']/span[2]", "xpath:idRelative"],
+        ["xpath=//div/section/div/div/div/div/div/div/span[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5b83b081-5958-48a2-b637-9d1476105fb5",
+      "comment": "",
+      "command": "click",
+      "target": "css=#\\\\30",
+      "targets": [
+        ["css=.Dropdown-placeholder", "css:finder"],
+        ["xpath=//div[@id='installPreferenceType']/span/span", "xpath:idRelative"],
+        ["xpath=//span/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4394ef1d-adc1-4e16-829b-0aec8e0cc125",
+      "comment": "",
+      "command": "click",
+      "target": "css=.c-btn",
+      "targets": [
+        ["css=.c-btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Save and continue')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4fa01d35-6a90-4b79-b66d-f66547dd2a11",
+      "comment": "",
+      "command": "click",
+      "target": "css=.c-btn",
+      "targets": [
+        ["css=.c-btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Save and continue')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b8345996-75c3-4af1-ac8c-cc2381d7236d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.c-btn",
+      "targets": [
+        ["css=.c-btn", "css:finder"],
+        ["xpath=(//button[@type='button'])[5]", "xpath:attributes"],
+        ["xpath=//div[2]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Read and accept agreement')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "92462006-4658-4456-98cc-46e88b1b58c0",
+      "comment": "",
+      "command": "click",
+      "target": "id=accepted",
+      "targets": [
+        ["id=accepted", "id"],
+        ["name=accepted", "name"],
+        ["css=#accepted", "css:finder"],
+        ["xpath=//input[@id='accepted']", "xpath:attributes"],
+        ["xpath=//label/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b35ddfc5-ee93-4fac-b076-c5f8a0a22f17",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=signature",
+      "targets": [
+        ["id=signature", "id"],
+        ["name=signature", "name"],
+        ["css=#signature", "css:finder"],
+        ["xpath=//input[@id='signature']", "xpath:attributes"],
+        ["xpath=//form/div[2]/div/input", "xpath:position"]
+      ],
+      "value": "test test"
+    }, {
+      "id": "a18b45ed-2c06-4d7d-975b-eafcd4bdd366",
+      "comment": "",
+      "command": "click",
+      "target": "css=.value-plan-accept-agreement",
+      "targets": [
+        ["css=.value-plan-accept-agreement", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//p[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Accept Agreement')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a3496985-65a8-492b-8171-af5b8c0b088d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.c-btn",
+      "targets": [
+        ["css=.c-btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[2]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Submit order')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "2b69da51-b069-43c5-84b8-3a547fcbee9c",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["d9cd1d13-ea0a-4f9f-832e-decd7982b35a"]
+  }],
+  "urls": ["https://test-ecommerce-discover-test-external.nonprod.dsl.aws.shaw.ca/", "https://www.shaw.ca/"],
+  "plugins": []
+}
