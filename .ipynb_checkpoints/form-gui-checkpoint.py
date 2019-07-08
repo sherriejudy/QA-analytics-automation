@@ -16,9 +16,7 @@ class FormFill(wx.Frame):
     def __init__(self):
         super().__init__(parent=None, title='Form Filling Control Panel')
         panel = wx.Panel(self)        
-        my_sizer = wx.BoxSizer(wx.VERTICAL) 
-        
-        wx.StaticText(panel, label="Testing")
+        my_sizer = wx.BoxSizer(wx.VERTICAL)
         
         my_btn = wx.Button(panel, label='Selenium IDE Testing')
         my_btn.Bind(wx.EVT_BUTTON, self.seleniumIDE)
@@ -33,16 +31,28 @@ class FormFill(wx.Frame):
         
         panel.SetSizer(my_sizer)        
         self.Show()
-
+        
+    
     def seleniumIDE(self, event):
-        value = self.text_ctrl.GetValue()
-        if not value:
-            print("You didn't enter anything!")
-        else:
-            print(f'You typed: "{value}"')
+        
+        with wx.FileDialog(self, "Open chromedriver", style=wx.FD_OPEN | wx.FD_FILE_MUST_EXIST) as fileDialog:
+
+            if fileDialog.ShowModal() == wx.ID_CANCEL:
+                return
+
+            repoPath = fileDialog.GetDirectory()
+            driverPath = fileDialog.GetPath()
+           
+        unpacked_extension_path = str(Path(repoPath + '/adobe-debugger'))
+        unpacked_extension_path2 = str(Path(repoPath + '/seleniumIDE'))
+        options = Options()
+
+        options.add_argument('--load-extension={},{}'.format(unpacked_extension_path,unpacked_extension_path2))
+        driver = webdriver.Chrome(driverPath, options=options)
     
     def runCSV (self, event):
-        p.CSV_prettifier()
+        value = self.text_ctrl.GetValue()
+        p.CSV_prettifier(path, value, endpoints = None, forms = True)
 
 if __name__ == '__main__':
     app = wx.App()

@@ -3,6 +3,28 @@
 # - Input: path of raw CSV files.
 # - Output: CSV (single sheet)/XLSX (multiple sheets) files with improved readability.
 
+def QA_generalize (repoPath):
+    import pandas as pd
+    import os
+    import time
+    from selenium import webdriver
+    from selenium.webdriver.common.keys import Keys
+    from selenium.webdriver.chrome.options import Options
+    from selenium.webdriver.common.by import By
+    from selenium.webdriver.support.ui import WebDriverWait
+    from selenium.webdriver.support import expected_conditions as EC
+    from pathlib import Path
+    
+    import Processing
+    
+    driverPath = str(Path(repoPath + '/chromedriver'))
+    unpacked_extension_path = str(Path(repoPath + '/adobe-debugger'))
+    unpacked_extension_path2 = str(Path(repoPath + '/seleniumIDE'))
+    options = Options()
+
+    options.add_argument('--load-extension={},{}'.format(unpacked_extension_path,unpacked_extension_path2))
+    driver = webdriver.Chrome(driverPath, options=options)
+
 def http_https (x):
     if x[0:7] == 'http://':
         x = x.replace('http://', 'https://', 1)
@@ -32,15 +54,19 @@ def prodStr (df):
         # Add a new line to the string if it isn't the first item of the product.
         prostr = prostr + ('' if (i == 0) else '\n') + '    #'+ (str(count+1)) + '\n'
         item = i.split(';')
-
+        
+        prodDict = []
+        
         countj = 0
         for j in item:
             # Map dictionary to product string components.
             prostr = prostr + (('    ' + dictProducts[countj]) if countj<=5 else '    ')
+            prodDict[countj] = prostr + j
             prostr = prostr + j + '\n'
             countj = countj + 1
         count = count + 1
-    return prostr
+        
+    return prodDict
 
 def CSV_prettifier(path, outfile, endpoints = None, forms = False):
 
@@ -120,7 +146,7 @@ def CSV_prettifier(path, outfile, endpoints = None, forms = False):
             di.update({'home': df})
 
         # Delete raw csv file after use.
-        #os.remove(x)
+        os.remove(x)
 
     # Concat list of dataframes to generate summary page.
     frame = pd.concat(li, axis=1, sort='False')
