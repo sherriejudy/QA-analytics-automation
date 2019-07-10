@@ -39,7 +39,7 @@ class FormFill(wx.Frame):
     
     def seleniumIDE(self, event):
 
-            repoPath = os.path.dirname(os.path.abspath(__file__))
+            self.repoPath = os.path.dirname(os.path.abspath(__file__))
             driverPath = str(Path(repoPath + '/chromedriver'))
             unpacked_extension_path = str(Path(repoPath + '/adobe-debugger'))
             unpacked_extension_path2 = str(Path(repoPath + '/seleniumIDE'))
@@ -54,7 +54,7 @@ class FormFill(wx.Frame):
     
     def runCSV (self, event):
         value = self.text_ctrl.GetValue()
-        p.CSV_prettifier(path, value, endpoints = None, forms = True)
+        p.CSV_prettifier(repoPath, endpoints = None, value, forms = True)
 
 if __name__ == '__main__':
     app = wx.App()

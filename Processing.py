@@ -3,28 +3,6 @@
 # - Input: path of raw CSV files.
 # - Output: CSV (single sheet)/XLSX (multiple sheets) files with improved readability.
 
-def QA_generalize (repoPath):
-    import pandas as pd
-    import os
-    import time
-    from selenium import webdriver
-    from selenium.webdriver.common.keys import Keys
-    from selenium.webdriver.chrome.options import Options
-    from selenium.webdriver.common.by import By
-    from selenium.webdriver.support.ui import WebDriverWait
-    from selenium.webdriver.support import expected_conditions as EC
-    from pathlib import Path
-    
-    import Processing
-    
-    driverPath = str(Path(repoPath + '/chromedriver'))
-    unpacked_extension_path = str(Path(repoPath + '/adobe-debugger'))
-    unpacked_extension_path2 = str(Path(repoPath + '/seleniumIDE'))
-    options = Options()
-
-    options.add_argument('--load-extension={},{}'.format(unpacked_extension_path,unpacked_extension_path2))
-    driver = webdriver.Chrome(driverPath, options=options)
-
 def http_https (x):
     if x[0:7] == 'http://':
         x = x.replace('http://', 'https://', 1)
@@ -37,7 +15,7 @@ def prodStr (df):
     '''
     
     # Delimiters for product string in order is: (1) ',' (2) ';'
-    products = df.loc['Products'][0].strip()
+    products = test.strip()
     products = products.split(',')
     prostr = '\n'
 
@@ -50,25 +28,37 @@ def prodStr (df):
                     5: 'eVars    : '}
 
     count = 0
+    prodDict = []
+
     for i in products:
         # Add a new line to the string if it isn't the first item of the product.
-        prostr = prostr + ('' if (i == 0) else '\n') + '    #'+ (str(count+1)) + '\n'
+        prostr = prostr + ('' if (i == 0) else '\n')
         item = i.split(';')
-        
-        prodDict = []
-        
+
         countj = 0
         for j in item:
             # Map dictionary to product string components.
-            prostr = prostr + (('    ' + dictProducts[countj]) if countj<=5 else '    ')
-            prodDict[countj] = prostr + j
+            prostr = prostr + ((dictProducts[countj]) if countj<=5 else '    ')
             prostr = prostr + j + '\n'
+            prodDict.append(((dictProducts[countj]) if countj<=5 else '    ')+j)
             countj = countj + 1
         count = count + 1
-        
-    return prostr
 
-def CSV_prettifier(path, outfile, endpoints = None, forms = False):
+    l = []
+    d = {}
+    
+    # String to list of dictionaries
+    for i in range(len(prodDict)):
+        d[prodDict[i][0:9]] = prodDict[i][11:]
+        if (i + 1) % 6 == 0:
+            l.append(d)
+            d = {}
+            
+    # Save to CSV
+    ps = pd.DataFrame(l)
+    ps.to_csv('product-strings.csv')
+
+def CSV_prettifier(path, endpoints, outfile, forms = False):
 
     """
     This function takes the raw csv files from the adobe debugger chrome extension and makes them more readable.
@@ -91,13 +81,10 @@ def CSV_prettifier(path, outfile, endpoints = None, forms = False):
 
     # If forms is set to False, open endpoints and set all links to 'FAILED' status.
     if not forms:
-        try:
-            ep = pd.read_csv(str(Path(path + '/' + endpoints)), names=['Endpoints'])
-            dup_ep = ep
-            dup_ep['Endpoints'] = dup_ep['Endpoints'].apply(lambda x: http_https(x))
-            dup_ep['Result'] = 'FAILURE/REDIRECTED'
-        except:
-            raise ValueError('No endpoints csv file specified.')
+        ep = pd.read_csv(str(Path(path + '/' + endpoints)), names=['Endpoints'])
+        dup_ep = ep
+        ep['Endpoints'] = ep['Endpoints'].apply(lambda x: http_https(x))
+        dup_ep['Result'] = 'FAILURE/REDIRECTED'
 
     # Remove any csv files that aren't part of analytics output from the list (doesn't delete files).
     for file in all_files:
@@ -118,11 +105,7 @@ def CSV_prettifier(path, outfile, endpoints = None, forms = False):
 
         # Checks if 'Products' index exists and prints to a text file (keeps appending).
         if 'Products' in df.index:
-            product_str = prodStr(df)
-            df.loc['Products'][0] = product_str
-            with open(str(Path(path + '/' + 'product-strings.txt')), "a") as text_file:
-                print(df.iloc[0][0] + '\n' + product_str, file=text_file)
-            text_file.close()
+            prodStr(df)
 
         li.append(df)
 
