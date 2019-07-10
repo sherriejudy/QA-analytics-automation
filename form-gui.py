@@ -18,37 +18,39 @@ class FormFill(wx.Frame):
         panel = wx.Panel(self)        
         my_sizer = wx.BoxSizer(wx.VERTICAL)
         
-        my_btn = wx.Button(panel, label='Selenium IDE Testing')
+        my_btn = wx.Button(panel, label='Open WebDriver')
         my_btn.Bind(wx.EVT_BUTTON, self.seleniumIDE)
-        my_sizer.Add(my_btn, 0, wx.ALL | wx.CENTER, 5)
+        my_sizer.Add(my_btn, 0, wx.ALL | wx.EXPAND, 2)
+        
+        my_btn2 = wx.Button(panel, label='Close WebDriver')
+        my_btn2.Bind(wx.EVT_BUTTON, self.seleniumIDE2)
+        my_sizer.Add(my_btn2, 0, wx.ALL | wx.EXPAND, 2)
         
         self.text_ctrl = wx.TextCtrl(panel, value = 'Output File Name (.xlsx)')
-        my_sizer.Add(self.text_ctrl, 0, wx.ALL | wx.EXPAND, 5) 
+        my_sizer.Add(self.text_ctrl, 0, wx.ALL | wx.EXPAND, 2) 
         
-        my_btn2 = wx.Button(panel, label='CSV Prettifier')
-        my_btn2.Bind(wx.EVT_BUTTON, self.runCSV)
-        my_sizer.Add(my_btn2, 0, wx.ALL | wx.CENTER, 5)
+        my_btn3 = wx.Button(panel, label='CSV Prettifier')
+        my_btn3.Bind(wx.EVT_BUTTON, self.runCSV)
+        my_sizer.Add(my_btn3, 0, wx.ALL | wx.EXPAND, 2)
         
         panel.SetSizer(my_sizer)        
         self.Show()
         
     
     def seleniumIDE(self, event):
+
+            repoPath = os.path.dirname(os.path.abspath(__file__))
+            driverPath = str(Path(repoPath + '/chromedriver'))
+            unpacked_extension_path = str(Path(repoPath + '/adobe-debugger'))
+            unpacked_extension_path2 = str(Path(repoPath + '/seleniumIDE'))
+            options = Options()
+
+            options.add_argument('--load-extension={},{}'.format(unpacked_extension_path,unpacked_extension_path2))
+            self.driver = webdriver.Chrome(driverPath, options=options)
+    
+    def seleniumIDE2(self, event):
         
-        with wx.FileDialog(self, "Open chromedriver", style=wx.FD_OPEN | wx.FD_FILE_MUST_EXIST) as fileDialog:
-
-            if fileDialog.ShowModal() == wx.ID_CANCEL:
-                return
-
-            repoPath = fileDialog.GetDirectory()
-            driverPath = fileDialog.GetPath()
-           
-        unpacked_extension_path = str(Path(repoPath + '/adobe-debugger'))
-        unpacked_extension_path2 = str(Path(repoPath + '/seleniumIDE'))
-        options = Options()
-
-        options.add_argument('--load-extension={},{}'.format(unpacked_extension_path,unpacked_extension_path2))
-        driver = webdriver.Chrome(driverPath, options=options)
+        self.driver.quit()
     
     def runCSV (self, event):
         value = self.text_ctrl.GetValue()
