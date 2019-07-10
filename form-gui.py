@@ -4,16 +4,13 @@ import os
 import time
 import Processing as p
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import WebDriverException
+
 from pathlib import Path
 
 class FormFill(wx.Frame):    
     def __init__(self):
+        self.repoPath = os.path.dirname(os.path.abspath(__file__))
         super().__init__(parent=None, title='Form Filling Control Panel')
         panel = wx.Panel(self)        
         my_sizer = wx.BoxSizer(wx.VERTICAL)
@@ -38,11 +35,9 @@ class FormFill(wx.Frame):
         
     
     def seleniumIDE(self, event):
-
-            self.repoPath = os.path.dirname(os.path.abspath(__file__))
-            driverPath = str(Path(repoPath + '/chromedriver'))
-            unpacked_extension_path = str(Path(repoPath + '/adobe-debugger'))
-            unpacked_extension_path2 = str(Path(repoPath + '/seleniumIDE'))
+            driverPath = str(Path(self.repoPath + '/chromedriver'))
+            unpacked_extension_path = str(Path(self.repoPath + '/adobe-debugger'))
+            unpacked_extension_path2 = str(Path(self.repoPath + '/seleniumIDE'))
             options = Options()
 
             options.add_argument('--load-extension={},{}'.format(unpacked_extension_path,unpacked_extension_path2))
@@ -54,7 +49,8 @@ class FormFill(wx.Frame):
     
     def runCSV (self, event):
         value = self.text_ctrl.GetValue()
-        p.CSV_prettifier(repoPath, endpoints = None, value, forms = True)
+        homeDir = os.path.expanduser('~')
+        p.CSV_prettifier(str(Path(homeDir + '/Downloads')), 'endpoints.csv', value, forms = True)
 
 if __name__ == '__main__':
     app = wx.App()

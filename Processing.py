@@ -13,9 +13,11 @@ def prodStr (df):
     df: pandas dataframe that needs product string parsing.
     output: product string to text file (type:str)
     '''
+
+    import pandas as pd
     
     # Delimiters for product string in order is: (1) ',' (2) ';'
-    products = test.strip()
+    products = df.loc['Products'][0].strip()
     products = products.split(',')
     prostr = '\n'
 
@@ -56,7 +58,8 @@ def prodStr (df):
             
     # Save to CSV
     ps = pd.DataFrame(l)
-    ps.to_csv('product-strings.csv')
+    homeDir = os.path.expanduser('~')
+    ps.to_csv(str(Path(homeDir + '/Downloads/product-strings.csv')))
 
 def CSV_prettifier(path, endpoints, outfile, forms = False):
 
