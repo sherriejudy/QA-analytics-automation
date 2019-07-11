@@ -2,6 +2,11 @@
 #
 # - Input: path of raw CSV files.
 # - Output: CSV (single sheet)/XLSX (multiple sheets) files with improved readability.
+import pandas as pd
+import os
+import glob
+from pathlib import Path
+
 
 def http_https (x):
     if x[0:7] == 'http://':
@@ -15,6 +20,7 @@ def prodStr (df):
     '''
 
     import pandas as pd
+    import os
     
     # Delimiters for product string in order is: (1) ',' (2) ';'
     products = df.loc['Products'][0].strip()
@@ -56,10 +62,9 @@ def prodStr (df):
             l.append(d)
             d = {}
             
-    # Save to CSV
     ps = pd.DataFrame(l)
-    homeDir = os.path.expanduser('~')
-    ps.to_csv(str(Path(homeDir + '/Downloads/product-strings.csv')))
+    
+    return ps
 
 def CSV_prettifier(path, endpoints, outfile, forms = False):
 
@@ -98,6 +103,7 @@ def CSV_prettifier(path, endpoints, outfile, forms = False):
 
     li = []
     di = {}
+    li_prod = []
 
     # Read csv files to pandas and append to `li` for summary page and `di` for individual sheets.
     for filename in all_files:
@@ -108,7 +114,8 @@ def CSV_prettifier(path, endpoints, outfile, forms = False):
 
         # Checks if 'Products' index exists and prints to a text file (keeps appending).
         if 'Products' in df.index:
-            prodStr(df)
+            ps = prodStr(df)
+            li_prod.append(ps)
 
         li.append(df)
 
@@ -137,6 +144,10 @@ def CSV_prettifier(path, endpoints, outfile, forms = False):
     # Concat list of dataframes to generate summary page.
     frame = pd.concat(li, axis=1, sort='False')
     di.update({'Summary': frame})
+    
+    # Product Strings concat
+    frame_prod = pd.concat(li_prod, axis=0, sort='False')
+    frame_prod.to_csv(str(Path(path + '/' + 'product-strings.csv')), mode='a')
 
     writer = pd.ExcelWriter(str(Path(path + '/' + outfile)), engine='xlsxwriter')
 

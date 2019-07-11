@@ -11,13 +11,10 @@ from pathlib import Path
 class FormFill(wx.Frame):    
     def __init__(self):
         self.repoPath = os.path.dirname(os.path.abspath(__file__))
-        super().__init__(parent=None, title='Form Filling Control Panel')
+        self.homeDir = os.path.expanduser('~')
+        super().__init__(parent=None, title='Form Filling')
         panel = wx.Panel(self)        
         my_sizer = wx.BoxSizer(wx.VERTICAL)
-        
-        my_btn = wx.Button(panel, label='Open WebDriver')
-        my_btn.Bind(wx.EVT_BUTTON, self.seleniumIDE)
-        my_sizer.Add(my_btn, 0, wx.ALL | wx.EXPAND, 2)
         
         my_btn2 = wx.Button(panel, label='Close WebDriver')
         my_btn2.Bind(wx.EVT_BUTTON, self.seleniumIDE2)
@@ -26,31 +23,28 @@ class FormFill(wx.Frame):
         self.text_ctrl = wx.TextCtrl(panel, value = 'Output File Name (.xlsx)')
         my_sizer.Add(self.text_ctrl, 0, wx.ALL | wx.EXPAND, 2) 
         
-        my_btn3 = wx.Button(panel, label='CSV Prettifier')
-        my_btn3.Bind(wx.EVT_BUTTON, self.runCSV)
-        my_sizer.Add(my_btn3, 0, wx.ALL | wx.EXPAND, 2)
         
-        panel.SetSizer(my_sizer)        
+        panel.SetSizer(my_sizer)
+        wx.Window.SetSize(panel, width = 100, height = 100)
         self.Show()
         
-    
-    def seleniumIDE(self, event):
-            driverPath = str(Path(self.repoPath + '/chromedriver'))
-            unpacked_extension_path = str(Path(self.repoPath + '/adobe-debugger'))
-            unpacked_extension_path2 = str(Path(self.repoPath + '/seleniumIDE'))
-            options = Options()
+        driverPath = str(Path(self.repoPath + '/chromedriver'))
+        unpacked_extension_path = str(Path(self.repoPath + '/adobe-debugger'))
+        unpacked_extension_path2 = str(Path(self.repoPath + '/seleniumIDE'))
+        options = Options()
 
-            options.add_argument('--load-extension={},{}'.format(unpacked_extension_path,unpacked_extension_path2))
-            self.driver = webdriver.Chrome(driverPath, options=options)
+        options.add_argument('--load-extension={},{}'.format(unpacked_extension_path,unpacked_extension_path2))
+        self.driver = webdriver.Chrome(driverPath, options=options)
     
     def seleniumIDE2(self, event):
         
         self.driver.quit()
-    
-    def runCSV (self, event):
         value = self.text_ctrl.GetValue()
-        homeDir = os.path.expanduser('~')
-        p.CSV_prettifier(str(Path(homeDir + '/Downloads')), 'endpoints.csv', value, forms = True)
+        p.CSV_prettifier(str(Path(self.homeDir + '/Downloads')), 'endpoints.csv', value, forms = True)
+        print('Complete')
+        
+        import sys 
+        sys.exit()
 
 if __name__ == '__main__':
     app = wx.App()
