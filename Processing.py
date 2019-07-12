@@ -144,10 +144,6 @@ def CSV_prettifier(path, endpoints, outfile, forms = False):
     # Concat list of dataframes to generate summary page.
     frame = pd.concat(li, axis=1, sort='False')
     di.update({'Summary': frame})
-    
-    # Product Strings concat
-    frame_prod = pd.concat(li_prod, axis=0, sort='False')
-    frame_prod.to_csv(str(Path(path + '/' + 'product-strings.csv')), mode='a')
 
     writer = pd.ExcelWriter(str(Path(path + '/' + outfile)), engine='xlsxwriter')
 
@@ -156,5 +152,9 @@ def CSV_prettifier(path, endpoints, outfile, forms = False):
         di[sheet].to_excel(writer, sheet_name=sheet, index=True)
     if not forms:
         dup_ep.to_csv(str(Path(path + '/' + endpoints)), index=False)
+    elif forms:
+        # Product Strings concat
+        frame_prod = pd.concat(li_prod, axis=0, sort='False')
+        frame_prod.to_csv(str(Path(path + '/' + 'product-strings.csv')), mode='a')
         
     writer.save()

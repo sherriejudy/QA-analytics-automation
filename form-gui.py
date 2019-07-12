@@ -20,7 +20,7 @@ class FormFill(wx.Frame):
         my_btn2.Bind(wx.EVT_BUTTON, self.seleniumIDE2)
         my_sizer.Add(my_btn2, 0, wx.ALL | wx.EXPAND, 2)
         
-        self.text_ctrl = wx.TextCtrl(panel, value = 'Output File Name (.xlsx)')
+        self.text_ctrl = wx.TextCtrl(panel, value = 'FormsOutput.xlsx')
         my_sizer.Add(self.text_ctrl, 0, wx.ALL | wx.EXPAND, 2) 
         
         
@@ -40,7 +40,7 @@ class FormFill(wx.Frame):
         
         self.driver.quit()
         value = self.text_ctrl.GetValue()
-        p.CSV_prettifier(str(Path(self.homeDir + '/Downloads')), 'endpoints.csv', value, forms = True)
+        p.CSV_prettifier(str(Path(self.homeDir + '/Downloads')), 'endpoints.csv', value, True)
         print('Complete')
         
         import sys 
