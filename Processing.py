@@ -35,36 +35,42 @@ def prodStr (df):
                     4: 'Events   : ',
                     5: 'eVars    : '}
 
-    count = 0
     prodDict = []
 
-    for i in products:
+    for count,i in enumerate(products):
         # Add a new line to the string if it isn't the first item of the product.
-        prostr = prostr + ('' if (i == 0) else '\n')
         item = i.split(';')
-
-        countj = 0
-        for j in item:
-            # Map dictionary to product string components.
-            prostr = prostr + ((dictProducts[countj]) if countj<=5 else '    ')
-            prostr = prostr + j + '\n'
-            prodDict.append(((dictProducts[countj]) if countj<=5 else '    ')+j)
-            countj = countj + 1
-        count = count + 1
+        for countj,j in enumerate(item):
+            if (countj % 4 == 0 or countj % 5 == 0) and countj != 0 and j != '':
+                j = j.split('|')
+                for e in j:
+                    if countj % 4 == 0:
+                        prodDict.append(e[0:7] + '  : ' + e[8:])
+                    else:
+                        prodDict.append(e[0:6] + '   : ' + e[7:])
+            else:
+                # Map dictionary to product string components.
+                prodDict.append(((dictProducts[countj]) if countj<=5 else '    ')+j)
 
     l = []
     d = {}
     
+    print(prodDict)
+    
     # String to list of dictionaries
     for i in range(len(prodDict)):
         d[prodDict[i][0:9]] = prodDict[i][11:]
-        if (i + 1) % 6 == 0:
+        if i == (len(prodDict)-1):
+            l.append(d)
+            d = {}
+        elif ('Category' in prodDict[i+1]):
             l.append(d)
             d = {}
             
     ps = pd.DataFrame(l)
+    ps.set_index('Category ')
     
-    return ps
+    return ps.transpose()
 
 def CSV_prettifier(path, endpoints, outfile, forms = False):
 
@@ -131,12 +137,12 @@ def CSV_prettifier(path, endpoints, outfile, forms = False):
                 dup_ep['Result'][i] = 'SUCCESS'
 
         # Setting the name of each sheet to the webpage name.
-        if df.iloc[0][0] == ' https://www.shaw.ca/':
-            di.update({'shawca': df})
+        if (':' in df.iloc[0][0]) or ('/' in df.iloc[0][0]) :
+            di.update({'home': df})
         elif len(df.iloc[0][0]) <= 31:
             di.update({df.iloc[0][0]: df})
         elif len(df.iloc[0][0]) > 31:
-            di.update({'home': df})
+            di.update({df.iloc[0][0][0:30]: df})
 
         # Delete raw csv file after use.
         os.remove(x)
