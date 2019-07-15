@@ -55,8 +55,6 @@ def prodStr (df):
     l = []
     d = {}
     
-    print(prodDict)
-    
     # String to list of dictionaries
     for i in range(len(prodDict)):
         d[prodDict[i][0:9]] = prodDict[i][11:]

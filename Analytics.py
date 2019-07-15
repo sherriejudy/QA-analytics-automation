@@ -94,7 +94,7 @@ class AnalyticsBot(wx.Frame):
         print('Processing...')
 
         # Processing and collating analytics data
-        Processing.CSV_prettifier(str(Path(self.homeDir + '/Downloads')), '', self.text_ctrl.GetValue(), True)
+        Processing.CSV_prettifier(str(Path(self.homeDir + '/Downloads')), '', self.formOutput.GetValue(), True)
 
         print('\nComplete')
 
