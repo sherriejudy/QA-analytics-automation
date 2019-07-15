@@ -1,17 +1,15 @@
 # Navigating to all the page links and getting Adobe Analytics data
 
 # Import required modules
-from bs4 import BeautifulSoup
-from requests import get
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
 import sys
 import time
 from pathlib import Path
+from bs4 import BeautifulSoup
+from requests import get
 
 # Function to download analytics data for all navigation links on the website
 # Parses through the HTML navigation bar and uses the extension to download data
-def endPointHits(websiteURL, userDir, extensionPath, driverPath):
+def endPointHits(websiteURL, userDir, driver):
     """
         websiteURL: URL for the page to be analysed
         userDir: system path for user's directory (eg. '/Users/JohnDoe')
@@ -64,13 +62,6 @@ def endPointHits(websiteURL, userDir, extensionPath, driverPath):
         f.write('\n'.join(endPoints))
 
     f.close()
-
-    # Loads modified Adobe extension from directory and adds it to Selenium instance.
-    unpacked_extension_path = extensionPath
-    options = Options()
-
-    options.add_argument('--load-extension={}'.format(unpacked_extension_path))
-    driver = webdriver.Chrome(driverPath, options=options)
 
     # Downloading Page Load analytics for each page in CSV format
     for page in endPoints:
