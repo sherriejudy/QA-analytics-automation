@@ -7,7 +7,7 @@ Shaw Analytics Bot gets Adobe Analytics data from Shaw.ca navigation bar links w
 ```
 * Project setup
 * Project run 
-* Output excell sheets
+* Output Excel sheets
 * Form filling
 ```
 
@@ -17,7 +17,7 @@ Shaw Analytics Bot gets Adobe Analytics data from Shaw.ca navigation bar links w
 * Clone the repository on your local machine
 * Install Python 3
 * Install Google Chrome (the browser used in the project)
-* Command Line is used to setup and run the project
+* Command Line is used to set up and run the project
 * Navigate to the project directory using Command Line
 * Create a virtual environment in the project directory
   * Install virtualenv library:
@@ -42,34 +42,34 @@ Shaw Analytics Bot gets Adobe Analytics data from Shaw.ca navigation bar links w
   * GUI (Analytics QA Bot) should pop up behind am empty chrome window - do not delete this chrome window!
   * On GUI, insert test site `https://www.shaw.ca` into Page Loads
     * click `start testing`
-    * when testing done, go into downloads
-    * open the excell file containing all the Adobe Analytics data
+    * When testing is done, go into downloads
+    * Open the Excel file containing all the Adobe Analytics data
     
 ### Project Output
 
-The project opens a Chrome window and navigates to various links found on the provided website. The final output is an Excel sheet, containing the processed Adobe Analytics data with a processed product string, in the Downloads folder of the user. Navigate to the excell sheet named summary in the very end, to find all page loads' in one excell sheet. 
+The project opens a Chrome window and navigates to various links found on the provided website. The final output is an Excel sheet, containing the processed Adobe Analytics data with a processed product string, in the Downloads folder of the user. Navigate to the Excel sheet named summary in the very end, to find all page loads' in one Excel sheet. 
 
 ### Form filling option
 
-Additional form filling is available with selenium IDE chrome extension. Two sample Shaw.ca form tests are aleady provided inside ide_tests folder from your cloned repository. To run a test form: 
+Additional form filling is available with selenium IDE chrome extension. Two sample Shaw.ca form tests are already provided inside `ide_tests folder ` from your cloned repository. To run a test form: 
 
 * Clear cache on your default browser
-  * Go to Settings on browser
+  * Go to Settings on the browser
   * clear browsing data
 * Using Selenium IDE
-  * install Selenium IDE from Google Chrome Extension store
-  * click on Selenium IDE icon on extension bar
-  * open an existing project
-    * navigate to ide_tests folder from cloned repository
-    * choose a file, open
-  * slow down Test execution speed slightly to prevent loading errors
-  * run current test
+  * Install Selenium IDE from Google Chrome Extension store
+  * Click on Selenium IDE icon on the extension bar
+  * Open an existing project
+    * Navigate to ide_tests folder from the cloned repository
+    * Choose a file, open
+  * Slow down Test execution speed slightly to prevent loading errors
+  * Run current test
 * Graphical User Interface (GUI)
-  * input xlsx file generated from form filling, this file should be located in downloads folder
+  * Input xlsx file generated from form filling, this file should be located in the Downloads folder
   * click `process form data`
 
-### Creating new form
-It is also easy to create a new form test with selenium IDE, simply choose the option to create a new project. General form structure on the Shaw.ca are customer/non-customer verification, with an option to check out shopping cart as demonstrated by sample Shaw.ca test forms for reference. 
+### Creating a New Form
+It is also easy to create a new form test with selenium IDE, simply choose the option to create a new project. General form structure on the Shaw.ca is customer/non-customer verification, with an option to check out shopping cart as demonstrated by sample Shaw.ca test forms for reference. 
 
 ### Built With
 
