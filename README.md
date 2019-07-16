@@ -39,7 +39,7 @@ Shaw Analytics Bot gets Adobe Analytics data from Shaw.ca navigation bar links w
 * Run the main Python script to access GUI
   * `pythonw Analytics.py`
 * Graphical User Interface (GUI)
-  * GUI (Analytics QA Bot) should pop up behind am empty chrome window - do not delete this chrome window!
+  * GUI (Analytics QA Bot) should pop up behind an empty chrome window - do not delete this chrome window!
   * On GUI, insert test site `https://www.shaw.ca` into Page Loads
     * click `start testing`
     * When testing is done, go into downloads
@@ -53,9 +53,9 @@ The project opens a Chrome window and navigates to various links found on the pr
 
 Additional form filling is available with selenium IDE chrome extension. Two sample Shaw.ca form tests are already provided inside `ide_tests folder ` from your cloned repository. To run a test form: 
 
-* Clear cache on your default browser
-  * Go to Settings on the browser
-  * clear browsing data
+* Clear cache on your chrome browser
+  * Go to Settings on chrome
+  * Clear browsing data
 * Using Selenium IDE
   * Install Selenium IDE from Google Chrome Extension store
   * Click on Selenium IDE icon on the extension bar
@@ -66,10 +66,10 @@ Additional form filling is available with selenium IDE chrome extension. Two sam
   * Run current test
 * Graphical User Interface (GUI)
   * Input xlsx file generated from form filling, this file should be located in the Downloads folder
-  * click `process form data`
+  * Click `process form data`
 
 ### Creating a New Form
-It is also easy to create a new form test with selenium IDE, simply choose the option to create a new project. General form structure on the Shaw.ca is customer/non-customer verification, with an option to check out shopping cart as demonstrated by sample Shaw.ca test forms for reference. 
+It is also easy to create a new form test with selenium IDE, simply choose the option to create a new project. General form structure on the Shaw.ca is customer/non-customer verification, with an option to check out shopping cart, as demonstrated by the sample Shaw.ca test forms for reference. 
 
 ### Built With
 
