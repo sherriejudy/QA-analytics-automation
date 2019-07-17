@@ -1,6 +1,6 @@
-# Shaw Analytics Bot
+# QA Analytics Automation
 
-Shaw Analytics Bot gets Adobe Analytics data from Shaw.ca navigation bar links with a form filling feature, and a Graphical User Interface(GUI) for easy implementation. This bot parses the website's HTML code, gets the Adobe analytics data for all the navigation links and processes the data, providing an Excel sheet output of the processed information. Additional form filling for Shaw.ca is available through Selenium IDE. 
+QA Analytics Automation gets Adobe Analytics data from Shaw.ca navigation bar links with a form filling feature, and a Graphical User Interface(GUI) for easy implementation. This bot parses the website's HTML code, gets the Adobe analytics data for all the navigation links and processes the data, providing an Excel sheet output of the processed information. Additional form filling for Shaw.ca is available through Selenium IDE. 
 
 ### Look how easy it is to use:
 
@@ -13,7 +13,7 @@ Shaw Analytics Bot gets Adobe Analytics data from Shaw.ca navigation bar links w
 
 ### Project Setup
 
-* Repository: https://github.com/sherriejudy/shaw-data-bot
+* Repository: https://github.com/sherriejudy/QA-analytics-automation
 * Clone the repository on your local machine
 * Install Python 3
 * Install Google Chrome (the browser used in the project)
