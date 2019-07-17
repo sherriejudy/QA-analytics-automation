@@ -27,7 +27,7 @@ This tool is the perfect solution for pairing Adobe Analytics with your QA proce
 * Run the main Python script to access GUI
   * `pythonw Analytics.py`
 * Graphical User Interface (GUI)
-  * GUI (Analytics QA Bot) should pop up behind an empty chrome window. Note: do not close this chrome window!
+  * GUI (Analytics QA Bot) should pop up behind an empty chrome window. **Note: do not close this chrome window!**
   * On GUI, insert test site url into the Page Loads text field
     * click `start testing`
     * When testing is done, go into downloads
@@ -41,7 +41,7 @@ This tool is the perfect solution for pairing Adobe Analytics with your QA proce
 * Run the main Python script to access GUI
   * `pythonw Analytics.py`
 * Graphical User Interface (GUI)
-  * GUI (Analytics QA Bot) should pop up behind an empty chrome window. Note: do not close this chrome window!
+  * GUI (Analytics QA Bot) should pop up behind an empty chrome window. **Note: do not close this chrome window!**
   * On the empty Chrome window open the Selenium IDE extension where you will have the option to create a new test or open an old project and run the tests
     * Recording the test initially is a good start for setting up tests but fine tuning them and inserting steps that don't work manually ensures that Selenium can find all elements
     * Reducing test speed has been shown to produce better results with fewer errors
