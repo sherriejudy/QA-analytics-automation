@@ -69,7 +69,7 @@ class AnalyticsBot(wx.Frame):
         self.Hide()
         
         # Finding all navigation links and the associated analytics data
-        AnalyticsHits.endPointHits(self.webURL.GetValue(), self.homeDir, self.driver)
+        AnalyticsHits.endpoint_hits(self.webURL.GetValue(), self.homeDir, self.driver)
         #  Close driver window
         self.driver.quit()
 
@@ -77,7 +77,7 @@ class AnalyticsBot(wx.Frame):
         print('Processing...')
 
         # Processing and collating analytics data
-        Processing.CSV_prettifier(str(Path(self.homeDir + '/Downloads')), 'Endpoints.csv', 'Pageloads.xlsx', False)
+        Processing.csv_prettifier(str(Path(self.homeDir + '/Downloads')), 'Endpoints.csv', 'Pageloads.xlsx', False)
 
         print('\nComplete!')
 
@@ -94,7 +94,7 @@ class AnalyticsBot(wx.Frame):
         print('Processing...')
 
         # Processing and collating analytics data
-        Processing.CSV_prettifier(str(Path(self.homeDir + '/Downloads')), '', self.formOutput.GetValue(), True)
+        Processing.csv_prettifier(str(Path(self.homeDir + '/Downloads')), '', self.formOutput.GetValue(), True)
 
         print('\nComplete')
 

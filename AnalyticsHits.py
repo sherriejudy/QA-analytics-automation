@@ -9,7 +9,7 @@ from requests import get
 
 # Function to download analytics data for all navigation links on the website
 # Parses through the HTML navigation bar and uses the extension to download data
-def endPointHits(websiteURL, userDir, driver):
+def endpoint_hits(websiteURL, userDir, driver):
     """
         websiteURL: URL for the page to be analysed
         userDir: system path for user's directory (eg. '/Users/JohnDoe')

@@ -2,6 +2,7 @@
 #
 # - Input: path of raw CSV files.
 # - Output: CSV (single sheet)/XLSX (multiple sheets) files with improved readability.
+
 import pandas as pd
 import os
 import glob
@@ -13,7 +14,7 @@ def http_https (x):
         x = x.replace('http://', 'https://', 1)
     return x
 
-def prodStr (df):
+def prod_str (df):
     '''
     df: pandas dataframe that needs product string parsing.
     output: product string to text file (type:str)
@@ -24,7 +25,7 @@ def prodStr (df):
     
     # Delimiters for product string in order is: (1) ',' (2) ';'
     products = df.loc['Products'][0].strip()
-    products = products.split(',')
+    products = products.split(',') # First delimiter
     prostr = '\n'
 
     # Dictionary of categories for product string.
@@ -39,10 +40,10 @@ def prodStr (df):
 
     for count,i in enumerate(products):
         # Add a new line to the string if it isn't the first item of the product.
-        item = i.split(';')
+        item = i.split(';') # Second delimiter
         for countj,j in enumerate(item):
             if (countj % 4 == 0 or countj % 5 == 0) and countj != 0 and j != '':
-                j = j.split('|')
+                j = j.split('|') # Delimiter for events/evars
                 for e in j:
                     if countj % 4 == 0:
                         prodDict.append(e[0:7] + '  : ' + e[8:])
@@ -58,10 +59,7 @@ def prodStr (df):
     # String to list of dictionaries
     for i in range(len(prodDict)):
         d[prodDict[i][0:9]] = prodDict[i][11:]
-        if i == (len(prodDict)-1):
-            l.append(d)
-            d = {}
-        elif ('Category' in prodDict[i+1]):
+        if i == (len(prodDict)-1) or ('Category' in prodDict[i+1]):
             l.append(d)
             d = {}
             
@@ -70,7 +68,7 @@ def prodStr (df):
     
     return ps.transpose()
 
-def CSV_prettifier(path, endpoints, outfile, forms = False):
+def csv_prettifier(path, endpoints, outfile, forms = False):
 
     """
     This function takes the raw csv files from the adobe debugger chrome extension and makes them more readable.
@@ -100,11 +98,9 @@ def CSV_prettifier(path, endpoints, outfile, forms = False):
 
     # Remove any csv files that aren't part of analytics output from the list (doesn't delete files).
     for file in all_files:
-        if file[0:24] == 'adobe-analytics-data-raw':
-            pass
-        else:
+        if file[0:24] != 'adobe-analytics-data-raw':
             all_files.remove(file)
-
+            
     li = []
     di = {}
     li_prod = []
@@ -118,7 +114,7 @@ def CSV_prettifier(path, endpoints, outfile, forms = False):
 
         # Checks if 'Products' index exists and prints to a text file (keeps appending).
         if 'Products' in df.index:
-            ps = prodStr(df)
+            ps = prod_str(df)
             li_prod.append(ps)
 
         li.append(df)
