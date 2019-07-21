@@ -1,0 +1,7 @@
+organization=adeshkadambi
+projectKey=adeshkadambi_QA-analytics-automation
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.27355
+dashboardUrl=https://sonarcloud.io/dashboard?id=adeshkadambi_QA-analytics-automation
+ceTaskId=AWwGshRLBABcSdLoS1Ae
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AWwGshRLBABcSdLoS1Ae
