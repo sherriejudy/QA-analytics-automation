@@ -4,3 +4,4 @@
 virtualenv/
 hits/product-strings.txt
 Untitled.ipynb
+__pycache__/
