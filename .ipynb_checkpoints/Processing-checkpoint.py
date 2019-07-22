@@ -115,8 +115,7 @@ def csv_prettifier(path, endpoints, outfile, forms = False):
         # Checks if 'Products' index exists and prints to a text file (keeps appending).
         if 'Products' in df.index:
             ps = prod_str(df)
-            if ps != li_prod[-1] or len(li_prod) == 0:
-                li_prod.append(ps)
+            li_prod.append(ps)
 
         li.append(df)
 
