@@ -9,10 +9,14 @@ from requests import get
 
 # Function to download analytics data for all navigation links on the website
 # Parses through the HTML navigation bar and uses the extension to download data
+<<<<<<< HEAD
 def endpoint_hits(websiteURL, userDir, driver):
+=======
+def endPointHits(website_URL, user_dir, driver):
+>>>>>>> Refactored code according to SonarCloud code review
     """
-        websiteURL: URL for the page to be analysed
-        userDir: system path for user's directory (eg. '/Users/JohnDoe')
+        website_URL: URL for the page to be analysed
+        user_dir: system path for user's directory (eg. '/Users/JohnDoe')
         extensionPath: system path for unpacked Adobe extension
             (eg. '/Users/JohnDoe/Documents/data-bot/adobe-debugger')
         driverPath: system path for Chrome driver
@@ -22,8 +26,8 @@ def endpoint_hits(websiteURL, userDir, driver):
     # Creating a Beautiful Soup Object with website's
     # Home page HTML
     try:
-        response = get(websiteURL)
-        htmlSoup = BeautifulSoup(response.text, 'html.parser')
+        response = get(website_URL)
+        html_soup = BeautifulSoup(response.text, 'html.parser')
     except:
         # Handling exception for wrong URL
         print('Exception: Not a valid URL')
@@ -31,40 +35,40 @@ def endpoint_hits(websiteURL, userDir, driver):
     # print(html_soup.prettify())
 
     # Finding all navigation links for page load testing
-    endPoints = []
-    navLinks = htmlSoup.find('nav').find_all('a')
+    end_points = []
+    nav_links = html_soup.find('nav').find_all('a')
 
-    for link in navLinks:
+    for link in nav_links:
         # value of href attribute of each tag
         href = link.get('href')
 
         if href != None:
             # checking for full links vs end points
             if href.find('http') == -1:
-                href = websiteURL + href
+                href = website_URL + href
             # Standardizing URL
             if href[-1] == '/':
                 href = href[:-1]
             if href.find('shaw') != -1:
-                endPoints.append(href)
+                end_points.append(href)
 
     # Remove duplicate links
-    endPoints = list(dict.fromkeys(endPoints))
+    end_points = list(dict.fromkeys(end_points))
 
-    # Handling no endpoints exception
-    if not endPoints:
-        print('Exception: No navigation endpoints found')
+    # Handling no end_points exception
+    if not end_points:
+        print('Exception: No navigation end_points found')
         sys.exit(1)
 
-    # Exporting web endpoints to a CSV file
-    with open(str(Path(userDir + '/Downloads/Endpoints.csv')), 'w') as f:
+    # Exporting web end_points to a CSV file
+    with open(str(Path(user-dir + '/Downloads/end_points.csv')), 'w') as f:
         # Joining links with newline delimiter to create rows
-        f.write('\n'.join(endPoints))
+        f.write('\n'.join(end_points))
 
     f.close()
 
     # Downloading Page Load analytics for each page in CSV format
-    for page in endPoints:
+    for page in end_points:
         driver.get(page)
         # Delay for proper data population
         time.sleep(3)

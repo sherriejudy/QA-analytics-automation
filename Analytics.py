@@ -14,13 +14,13 @@ class AnalyticsBot(wx.Frame):
         self.homeDir = os.path.expanduser('~')
 
         # Driver and extension additions
-        driverPath = str(Path(self.repoPath + '/chromedriver'))
+        driver_path = str(Path(self.repoPath + '/chromedriver'))
         unpacked_extension_path = str(Path(self.repoPath + '/adobe-debugger'))
         unpacked_extension_path2 = str(Path(self.repoPath + '/seleniumIDE'))
 
         options = Options()
         options.add_argument('--load-extension={},{}'.format(unpacked_extension_path,unpacked_extension_path2))
-        self.driver = webdriver.Chrome(driverPath, options=options)
+        self.driver = webdriver.Chrome(driver_path, options=options)
 
         super().__init__(parent = None, title = 'Analytics QA Bot')
         # Creating a panel
