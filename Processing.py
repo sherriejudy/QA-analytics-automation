@@ -115,7 +115,9 @@ def csv_prettifier(path, endpoints, outfile, forms = False):
         # Checks if 'Products' index exists and prints to a text file (keeps appending).
         if 'Products' in df.index:
             ps = prod_str(df)
-            if ps != li_prod[-1] or len(li_prod) == 0:
+            if len(li_prod) == 0:
+                li_prod.append(ps)
+            elif ps.equals(li_prod[-1]) == False:
                 li_prod.append(ps)
 
         li.append(df)
@@ -155,7 +157,7 @@ def csv_prettifier(path, endpoints, outfile, forms = False):
         dup_ep.to_csv(str(Path(path + '/' + endpoints)), index=False)
     elif forms:
         # Product Strings concat
-        frame_prod = pd.concat(li_prod, axis=0, sort='False')
+        frame_prod = pd.concat(li_prod, axis=1, sort='False')
         frame_prod.to_csv(str(Path(path + '/' + 'product-strings.csv')), mode='a')
         
     writer.save()
