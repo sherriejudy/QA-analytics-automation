@@ -51,11 +51,11 @@ def endpoint_hits(website_URL, user_dir, driver):
 
     # Handling no end_points exception
     if not end_points:
-        print('Exception: No navigation end_points found')
+        print('Exception: No navigation endpoints found')
         sys.exit(1)
 
     # Exporting web end_points to a CSV file
-    with open(str(Path(user-dir + '/Downloads/end_points.csv')), 'w') as f:
+    with open(str(Path(user_dir + '/Downloads/endpoints.csv')), 'w') as f:
         # Joining links with newline delimiter to create rows
         f.write('\n'.join(end_points))
 
