@@ -9,16 +9,10 @@ from requests import get
 
 # Function to download analytics data for all navigation links on the website
 # Parses through the HTML navigation bar and uses the extension to download data
-<<<<<<< HEAD
-def endpoint_hits(websiteURL, userDir, driver):
-=======
 def endPointHits(website_URL, user_dir, driver):
->>>>>>> Refactored code according to SonarCloud code review
     """
         website_URL: URL for the page to be analysed
         user_dir: system path for user's directory (eg. '/Users/JohnDoe')
-        extensionPath: system path for unpacked Adobe extension
-            (eg. '/Users/JohnDoe/Documents/data-bot/adobe-debugger')
         driverPath: system path for Chrome driver
             (eg. '/Users/JohnDoe/Documents/data-bot/chromedriver')
     """
@@ -49,7 +43,7 @@ def endPointHits(website_URL, user_dir, driver):
             # Standardizing URL
             if href[-1] == '/':
                 href = href[:-1]
-            if href.find('shaw') != -1:
+            if href.find(website_URL) != -1:
                 end_points.append(href)
 
     # Remove duplicate links
