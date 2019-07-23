@@ -26,18 +26,19 @@ def prod_str (df):
     # Delimiters for product string in order is: (1) ',' (2) ';'
     products = df.loc['Products'][0].strip()
     products = products.split(',') # First delimiter
+    prostr = '\n'
 
     # Dictionary of categories for product string.
-    prod_categories = {0: 'Category : ',
+    dictProducts = {0: 'Category : ',
                     1: 'Product  : ',
                     2: 'Quantity : ',
                     3: 'Price    : ',
                     4: 'Events   : ',
                     5: 'eVars    : '}
 
-    prod_list = []
+    prodDict = []
 
-    for i in products:
+    for count,i in enumerate(products):
         # Add a new line to the string if it isn't the first item of the product.
         item = i.split(';') # Second delimiter
         for countj,j in enumerate(item):
@@ -45,20 +46,20 @@ def prod_str (df):
                 j = j.split('|') # Delimiter for events/evars
                 for e in j:
                     if countj % 4 == 0:
-                        prod_list.append(e[0:7] + '  : ' + e[8:])
+                        prodDict.append(e[0:7] + '  : ' + e[8:])
                     else:
-                        prod_list.append(e[0:6] + '   : ' + e[7:])
+                        prodDict.append(e[0:6] + '   : ' + e[7:])
             else:
                 # Map dictionary to product string components.
-                prod_list.append(((prod_categories[countj]) if countj<=5 else '    ')+j)
+                prodDict.append(((dictProducts[countj]) if countj<=5 else '    ')+j)
 
     l = []
     d = {}
     
     # String to list of dictionaries
-    for i in range(len(prod_list)):
-        d[prod_list[i][0:9]] = prod_list[i][11:]
-        if i == (len(prod_list)-1) or ('Category' in prod_list[i+1]):
+    for i in range(len(prodDict)):
+        d[prodDict[i][0:9]] = prodDict[i][11:]
+        if i == (len(prodDict)-1) or ('Category' in prodDict[i+1]):
             l.append(d)
             d = {}
             
@@ -114,10 +115,7 @@ def csv_prettifier(path, endpoints, outfile, forms = False):
         # Checks if 'Products' index exists and prints to a text file (keeps appending).
         if 'Products' in df.index:
             ps = prod_str(df)
-            if len(li_prod) == 0:
-                li_prod.append(ps)
-            elif ps.equals(li_prod[-1]) == False:
-                li_prod.append(ps)
+            li_prod.append(ps)
 
         li.append(df)
 
@@ -156,7 +154,7 @@ def csv_prettifier(path, endpoints, outfile, forms = False):
         dup_ep.to_csv(str(Path(path + '/' + endpoints)), index=False)
     elif forms:
         # Product Strings concat
-        frame_prod = pd.concat(li_prod, axis=1, sort='False')
+        frame_prod = pd.concat(li_prod, axis=0, sort='False')
         frame_prod.to_csv(str(Path(path + '/' + 'product-strings.csv')), mode='a')
         
     writer.save()

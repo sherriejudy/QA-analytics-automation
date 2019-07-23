@@ -61,6 +61,7 @@ The project opens a Chrome window and navigates to various links found on the pr
 ```
 * JavaScript
 * Python
+* Javascript
 * Pandas
 * Selenium Webdriver
 * Selenium IDE
