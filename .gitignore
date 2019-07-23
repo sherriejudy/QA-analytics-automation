@@ -3,3 +3,4 @@
 *.xlsx
 virtualenv/
 hits/product-strings.txt
+.DS_Store
